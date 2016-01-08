@@ -1,0 +1,3 @@
+//class Location
+class Location {
+}
