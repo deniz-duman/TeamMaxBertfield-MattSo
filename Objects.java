@@ -1,3 +1,3 @@
 //class Objects
-interface Objects {
+public interface Objects {
 }
