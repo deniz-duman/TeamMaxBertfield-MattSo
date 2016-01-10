@@ -1,3 +1,3 @@
 //class User; subclass of Entities
-public interface Entities{
+public abstract class User implements Entities{
 }
