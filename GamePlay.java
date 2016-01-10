@@ -1,3 +1,3 @@
 //Driver Class
-class GamePlay {
+public class GamePlay {
 }
