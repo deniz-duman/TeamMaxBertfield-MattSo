@@ -1,3 +1,3 @@
 //Weapons; subclass of Objects
-class Weapons {
+public class Weapons implements Objects{
 }
