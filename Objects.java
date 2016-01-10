@@ -1,3 +1,3 @@
 //class Objects
-class Objects {
+interface Objects {
 }
