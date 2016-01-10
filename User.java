@@ -1,3 +1,3 @@
 //class User; subclass of Entities
-class Entities {
+public interface Entities{
 }
