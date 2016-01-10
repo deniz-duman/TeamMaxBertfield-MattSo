@@ -1,3 +1,3 @@
-
-public class Items implements object {
+//Items; subclass of Objects
+public class Items implements Objects{
 }
