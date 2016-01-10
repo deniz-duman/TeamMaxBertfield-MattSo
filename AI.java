@@ -1,3 +1,3 @@
 //class AI; subclass of Entities.java
-class AI extends Entities{
+public abstract class AI implements Entities{
 }
