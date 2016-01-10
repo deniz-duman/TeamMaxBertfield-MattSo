@@ -1,3 +1,3 @@
 //class Food; subclass of Objects
-class Food {
+public class Food implements Objects{
 }
