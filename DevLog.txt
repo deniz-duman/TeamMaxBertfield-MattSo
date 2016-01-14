@@ -1,0 +1,18 @@
+Devlog:
+
+  ~1/7/16: Designed class UML and class relationship diagram (SeaBassChin and DD)
+
+  ~1/8/16: Continued working on diagrams and created all the classes (SeaBassChin)
+  
+  ~1/9/16: Edited classes to have interface and abstract functionality (DD)
+  
+  ~1/11/16: Created prototype map and story (DD and SeaBassChin)
+  
+  ~1/12/16: Finished map and story and finalized UML (SeaBassChin and DD)
+  
+  ~1/12/16: Added code to Location and Entities classes (DD)
+  
+  ~1/13/16: Added code to interfaces (SeaBassChin)
+  
+  ~1/14/16: Created flowchart and to-do list and devlog (SeaBassChin and DD)
+  
