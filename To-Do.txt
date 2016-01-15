@@ -8,10 +8,20 @@ To-Do List:
   
   4. Create story (mostly done)
   
-  5. Create interfaces (one done, estimated time: around an hour and a half)
+  5. Create interfaces (one done, estimated time: 1.5 hours)
   
   6. Create abstract classes (estimated time: 2 hours)
   
   7. Create subclasses (one done, estimated time: 3 hours)
   
   8. Create driver class (estimated time: 4-6 hours)
+  
+  9. Test (estimated time: 20 minutes)
+  
+  10. Debug (estimated time: 0-4 hours)
+  
+  9. Test (estimated time: 20 minutes)
+  
+  11. Final debug (estimated time: 0-4 hours)
+  
+  12. Final details (estimated time: 1 hour)
