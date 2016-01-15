@@ -16,3 +16,5 @@ Devlog:
   
   ~1/14/16: Created flowchart and to-do list and devlog (SeaBassChin and DD)
   
+  ~1/15/16: Finished class Location.java (DD and SeaBassChin)
+  
