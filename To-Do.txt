@@ -1,0 +1,17 @@
+To-Do List:
+
+  1. Figure out what to do (done)
+  
+  2. Create UML of classes (done)
+  
+  3. Create map for game (done)
+  
+  4. Create story (mostly done)
+  
+  5. Create interfaces (one done, estimated time: around an hour and a half)
+  
+  6. Create abstract classes (estimated time: 2 hours)
+  
+  7. Create subclasses (one done, estimated time: 3 hours)
+  
+  8. Create driver class (estimated time: 4-6 hours)
