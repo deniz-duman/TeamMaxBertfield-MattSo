@@ -6,19 +6,21 @@ public class Location {
   private int[] _coor;
   private ArrayList<Objects> _objects;
   private ArrayList<Entities> _entities;
-  private boolean isPassable;
+  private boolean isPassable, isGoal;
   //=========================================Constructors and ToString===================================================\\
   public Location(){
     boolean isPassable = false;
+    boolean isGoal = false;
   }
   
-  public Location (String name, String desc, int[] coor, ArrayList<Objects> objs, ArrayList<Entities> ents; boolean pass) {
+  public Location (String name, String desc, int[] coor, ArrayList<Objects> objs, ArrayList<Entities> ents, boolean pass, boolean goal) {
     _name = name;
     _desc = desc;
     _coor = coor;
     _objects = new ArrayList<Objects>();
     _entities = new ArrayList<Entities>();
     isPassable = pass;
+    isGoal = goal;
   }
   
   public static String toString() {
