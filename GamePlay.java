@@ -1,6 +1,6 @@
 //Driver Class
 public class GamePlay {
-  public static void Intro() {
+  public static void Intro() { //Intro Screen: Gives user choice of playing or seeing help menu
     boolean readyToStart = false;
     while (!readyToStart) {
       System.out.println("BEHIND ENEMY LINES \n Welcome behind enemy lines. Type 'play' to play game, type 'help' for instructions")
@@ -24,11 +24,15 @@ public class GamePlay {
       }
     }
   }
+  
+  public static void play() { //play method to dictate gameplay
+  }
   public static String whatJustHappened(){
     String retStr = "You have just";
     return retStr;
   }
   public static void main(String[] args) {
-   
+    Intro();
+    play();
 }
 }
