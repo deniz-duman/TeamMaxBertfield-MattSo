@@ -1,6 +1,8 @@
 //class User; subclass of Entities
 public class User implements Entities{
   double hunger;
+  int[] currlocation;
+  
   public User(){
     
     name = "DT 24601";
@@ -11,6 +13,11 @@ public class User implements Entities{
     hp = 100.0;
     dmg = 100.0;
     hunger = 0;
-    
+    currlocation = new int[2];
+  }
+  
+  public void setLoc(int x, int y) {
+    currlocation[0] = x;
+    currlocation[1] = y;
   }
 }
