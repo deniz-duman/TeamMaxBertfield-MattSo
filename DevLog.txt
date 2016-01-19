@@ -18,3 +18,7 @@ Devlog:
   
   ~1/15/16: Finished class Location.java (DD and SeaBassChin)
   
+  ~1/19/16: Added variables and methods to User.java (SeaBassChin)
+  
+  ~1/19/16: Started main method of game play. Incorporated Keyboard.java. (SeaBassChin)
+  
