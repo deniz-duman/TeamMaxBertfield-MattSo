@@ -26,6 +26,7 @@ public class GamePlay {
   }
   
   public static void play() { //play method to dictate gameplay
+    while 
   }
   public static String whatJustHappened(){
     String retStr = "You have just";
