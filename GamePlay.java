@@ -198,27 +198,27 @@ public class GamePlay {
 
   public static void Intro() { //Intro Screen; Gives user choice of playing or seeing help menu
     boolean readyToStart = false;
-    //while (!readyToStart) {
+    while (!readyToStart) {
       System.out.println("BEHIND ENEMY LINES \n Welcome behind enemy lines. Type 'play' to play game, type 'help' for instructions");
-       /*String response  = Keyboard.readString();
+       String response  = Keyboard.readString();
       if (reponse.equals("play")) {
         readyToStart = true;
       }
       else if (response.equals("help")) {
-        System.out.println("Once you are on the battlefield, you will have to fend for yourself. \n"
+        System.out.println("`Once you are on the battlefield, you will have to fend for yourself. \n"
         +"Some commands that might help; \n\n"
         +"attack - attacks specified enemy \n"
         +"search - look around at your surroundings \n"
-        +"use <item> on <target> - uses specified item on target \n"
-        +"go <cardinal direction> - go to your desired location \n"
-        +"pickup <item> - pick up specified object"
+        +"use - uses specified item on a target \n"
+        +"move - go to your desired location \n"
+        +"pickup - pick up specified object"
         +"drop - drop item \n\n"
         +"Use these commands for your advantage. Good luck.");
       }
       else {
         System.out.println("invalid command");
-      }*/
-    //}
+      }
+    }
   }
   
   public static void play(User b) { //play method to dictate gameplay
@@ -227,7 +227,7 @@ public class GamePlay {
       System.out.println(map[b.getXcoor()][b.getYcoor()]);
       System.out.println("Choose something to do;");
       //if (response.equals("move")) {
-       // System.out.println("Choose a direction;");
+        //System.out.println("Choose a direction;");
       //}
     //}
   }
