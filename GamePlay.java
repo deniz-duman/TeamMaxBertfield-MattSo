@@ -102,68 +102,28 @@ public class GamePlay {
     Location IH = new Location ("Sea", String "Nothing but ocean", {8,7}, [], [], false, false)
     Location II = new Location ("Sea", String "Nothing but ocean", {8,8}, [], [], false, false)
   
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
+    map[0][1] = AA;
+    map[0][2] = AA;
+    map[0][3] = AA;
+    map[0][4] = AA;
+    map[0][5] = AA;
+    map[0][6] = AA;
+    map[0][7] = AA;
+    map[0][8] = AA;
+    map[0][9] = AA;
     
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
+    map[1][0] = BA;
+    map[1][1] = BB;
+    map[1][2] = BC;
+    map[1][3] = BD;
+    map[1][4] = BE;
+    map[1][5] = BF;
+    map[1][6] = BG;
+    map[1][7] = BH;
+    map[1][8] = BI;
     
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    map[0][0] = AA;
-    
-    map[0][0] = AA;
-    map[0][0] = AA;
+    map[2][0] = CA;
+   
     
   }
   public static void Intro() { //Intro Screen: Gives user choice of playing or seeing help menu
