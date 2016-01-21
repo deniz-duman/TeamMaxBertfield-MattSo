@@ -1,5 +1,6 @@
 //Driver Class
 public class GamePlay {
+  Location[][] map = new Location[9][9];
   
   public static void Run() {
     CreateWorld();
@@ -75,7 +76,7 @@ public class GamePlay {
     Location GB = new Location ("Sea", String "Nothing but ocean", {6,1}, [], [], false, false)
     Location GC = new Location ("Sea", String "Nothing but ocean", {6,2}, [], [], false, false)
     Location GD = new Location ("Sea", String "Nothing but ocean", {6,3}, [], [], false, false)
-    Location GE = new Location ("Sea", String "Nothing but ocean", {6,4}, [], [], false, false)
+    Location GE = new Location ("Field", String "Just a field.", {6,4}, [], [], true, false)
     Location GF = new Location ("Sea", String "Nothing but ocean", {6,5}, [], [], false, false)
     Location GG = new Location ("Sea", String "Nothing but ocean", {6,6}, [], [], false, false)
     Location GH = new Location ("Sea", String "Nothing but ocean", {6,7}, [], [], false, false)
@@ -84,9 +85,9 @@ public class GamePlay {
     Location HA = new Location ("Sea", String "Nothing but ocean", {7,0}, [], [], false, false)
     Location HB = new Location ("Sea", String "Nothing but ocean", {7,1}, [], [], false, false)
     Location HC = new Location ("Sea", String "Nothing but ocean", {7,2}, [], [], false, false)
-    Location HD = new Location ("Sea", String "Nothing but ocean", {7,3}, [], [], false, false)
-    Location HE = new Location ("Sea", String "Nothing but ocean", {7,4}, [], [], false, false)
-    Location HF = new Location ("Sea", String "Nothing but ocean", {7,5}, [], [], false, false)
+    Location HD = new Location ("Field", String "Just a field.", {7,3}, [], [], true, false)
+    Location HE = new Location ("Field", String "You land in a field.", {7,4}, [], [], true, false)
+    Location HF = new Location ("Field", String "Just a field.", {7,5}, [], [], true, false)
     Location HG = new Location ("Sea", String "Nothing but ocean", {7,6}, [], [], false, false)
     Location HH = new Location ("Sea", String "Nothing but ocean", {7,7}, [], [], false, false)
     Location HI = new Location ("Sea", String "Nothing but ocean", {7,8}, [], [], false, false)
@@ -101,6 +102,19 @@ public class GamePlay {
     Location IH = new Location ("Sea", String "Nothing but ocean", {8,7}, [], [], false, false)
     Location II = new Location ("Sea", String "Nothing but ocean", {8,8}, [], [], false, false)
   
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    
+    map[0][0] = AA;
+    map[0][0] = AA;
+    
   }
   public static void Intro() { //Intro Screen: Gives user choice of playing or seeing help menu
     boolean readyToStart = false;
@@ -128,7 +142,9 @@ public class GamePlay {
   }
   
   public static void play() { //play method to dictate gameplay
-    while 
+    while (Bob.isAlive) {
+      System.out.print
+    }
   }
   public static String whatJustHappened(){
     String retStr = "You have just";
