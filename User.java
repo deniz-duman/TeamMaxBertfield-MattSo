@@ -1,5 +1,10 @@
 //class User; subclass of Entities
 public class User implements Entities{
+  private double hp = 0;
+  private double dmg = 0;
+  private String name = "";
+  private String desc = "";
+  public boolean isAlive = true;
   private int ammo;
   private double hunger;
   private int[] currlocation;
@@ -40,7 +45,7 @@ public class User implements Entities{
   
   public double setHP(double newHealth) {
     double oldhp = hp;
-    hp = newHelth;
+    hp = newHealth;
     return hp;
   }
   
@@ -50,11 +55,11 @@ public class User implements Entities{
   
   public double setDMG(double newDMG) {
     double olddmg = dmg;
-    dmg = newDmg;
+    dmg = newDMG;
     return olddmg;
   }
-  public void attack(Entities ent) {
-    ent.setHp(ent.getHP() - dmg);
+  public void attack(double damage, Entities ent) {
+    ent.setHP(ent.getHP() - damage);
   }
   
   public void setLoc(int x, int y) {
