@@ -123,7 +123,58 @@ public class GamePlay {
     map[1][8] = BI;
     
     map[2][0] = CA;
-   
+    map[2][1] = CB;
+    map[2][2] = CC;
+    map[2][3] = CD;
+    map[2][4] = CE;
+    map[2][5] = CF;
+    map[2][6] = CG;
+    map[2][7] = CH;
+    map[2][8] = CI;
+    
+    map[3][0] = DA:
+    map[3][1] = DB:
+    map[3][2] = DC:
+    map[3][3] = DD:
+    map[3][4] = DE:
+    map[3][5] = DF:
+    map[3][6] = DG:
+    map[3][7] = DH:
+    map[3][8] = DI:
+    
+    map[4][0] = EA;
+    map[4][1] = EB; 
+    map[4][2] = EC;
+    map[4][3] = ED;
+    map[4][4] = EE;
+    map[4][5] = EF;
+    map[4][6] = EG;
+    map[4][7] = EH;
+    map[4][8] = EI;
+    
+    map[5][0] = FA:
+    map[5][1] = FB:
+    map[5][2] = FC:
+    map[5][3] = FD:
+    map[5][4] = FE:
+    map[5][5] = FF:
+    map[5][6] = FG:
+    map[5][7] = FH:
+    map[5][8] = FI:
+    
+    map[6][0] = GA:
+    map[6][1] = GB:
+    map[6][2] = GC:
+    map[6][3] = GD:
+    map[6][4] = GE:
+    map[6][5] = GF:
+    map[6][6] = GG:
+    map[6][7] = GH:
+    map[6][8] = GI:
+    
+    map[7][0] = HA;
+    map[7][0] = HA;
+    map[7][0] = HA;
     
   }
   public static void Intro() { //Intro Screen: Gives user choice of playing or seeing help menu
