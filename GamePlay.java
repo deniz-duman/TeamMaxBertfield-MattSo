@@ -1,6 +1,6 @@
 //Driver Class
 public class GamePlay {
-  Location[][] map = new Location[9][9];
+  public Location[][] map = new Location[9][9];
   
   public static void Run() {
     CreateWorld();
@@ -173,8 +173,24 @@ public class GamePlay {
     map[6][8] = GI:
     
     map[7][0] = HA;
-    map[7][0] = HA;
-    map[7][0] = HA;
+    map[7][1] = HB;
+    map[7][2] = HC;
+    map[7][3] = HD;
+    map[7][4] = HE;
+    map[7][5] = HF;
+    map[7][6] = HG;
+    map[7][7] = HH;
+    map[7][8] = HI;
+    
+    map[8][0] = IA;
+    map[8][1] = IB;
+    map[8][2] = IC;
+    map[8][3] = ID;
+    map[8][4] = IE;
+    map[8][5] = IF;
+    map[8][6] = IG;
+    map[8][7] = IH;
+    map[8][8] = II;
     
   }
   public static void Intro() { //Intro Screen: Gives user choice of playing or seeing help menu
@@ -204,7 +220,12 @@ public class GamePlay {
   
   public static void play() { //play method to dictate gameplay
     while (Bob.isAlive) {
-      System.out.print
+      String response  = Keyboard.readString();
+      System.out.print(map[Bob.getXcoor()[Bob.getYcoor()])
+      System.out.println("Choose something to do:")
+      if response.equals("move") {
+        System.out.println("Choose a direction:")
+      }
     }
   }
   public static String whatJustHappened(){
