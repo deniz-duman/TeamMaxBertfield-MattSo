@@ -114,6 +114,26 @@ public class GamePlay {
     
     map[0][0] = AA;
     map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    map[0][0] = AA;
+    
+    map[0][0] = AA;
+    map[0][0] = AA;
     
   }
   public static void Intro() { //Intro Screen: Gives user choice of playing or seeing help menu
