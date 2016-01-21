@@ -1,5 +1,16 @@
 //Driver Class
 public class GamePlay {
+  
+  public static void Run() {
+    CreateWorld();
+    Intro();
+    play();
+  }
+  
+  public static void CreateWorld() {
+    User Bob = new User();
+    
+  }
   public static void Intro() { //Intro Screen: Gives user choice of playing or seeing help menu
     boolean readyToStart = false;
     while (!readyToStart) {
