@@ -200,8 +200,8 @@ public class GamePlay {
     boolean readyToStart = false;
     while (!readyToStart) {
       System.out.println("BEHIND ENEMY LINES \n Welcome behind enemy lines. Type 'play' to play game, type 'help' for instructions");
-       String response  = Keyboard.readString();
-      if (reponse.equals("play")) {
+      String response = Keyboard.readString();
+      if (response.equals("play")) {
         readyToStart = true;
       }
       else if (response.equals("help")) {
