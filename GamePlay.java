@@ -1,116 +1,118 @@
 //Driver Class
 public class GamePlay {
-  public Location[][] map = new Location[9][9];
+  public static Location[][] map = new Location[9][9];
+  //public static InputStreamReader isr;
+  //public static BufferedReader in;
   
   public static void Run() {
     CreateWorld();
     Intro();
-    play();
+    User Bob = new User(); //makes user
+    play(Bob);
   }
   
   public static void CreateWorld() {
-    User Bob = new User(); //makes user
     //hardcodes each location on the map
     //Row 0
-    Location AA = new Location ("Sea", String "Nothing but ocean", {0,0}, [], [], false, false)
-    Location AB = new Location ("Sea", String "Nothing but ocean", {0,1}, [], [], false, false)
-    Location AC = new Location ("Sea", String "Nothing but ocean", {0,2}, [], [], false, false)
-    Location AD = new Location ("Sea", String "Nothing but ocean", {0,3}, [], [], false, false)
-    Location AE = new Location ("Sea", String "Nothing but ocean", {0,4}, [], [], false, false)
-    Location AF = new Location ("Sea", String "Nothing but ocean", {0,5}, [], [], false, false)
-    Location AG = new Location ("Sea", String "Nothing but ocean", {0,6}, [], [], false, false)
-    Location AH = new Location ("Sea", String "Nothing but ocean", {0,7}, [], [], false, false)
-    Location AI = new Location ("Sea", String "Nothing but ocean", {0,8}, [], [], false, false)
+    Location AA = new Location ("Sea", "Nothing but ocean",false, false);
+    Location AB = new Location ("Sea", "Nothing but ocean",false, false);
+    Location AC = new Location ("Sea", "Nothing but ocean",false, false);
+    Location AD = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location AE = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location AF = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location AG = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location AH = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location AI = new Location ("Sea",  "Nothing but ocean",false, false);
     //Row 1
-    Location BA = new Location ("Sea", String "Nothing but ocean", {1,0}, [], [], false, false)
-    Location BB = new Location ("Sea", String "Nothing but ocean", {1,1}, [], [], false, false)
-    Location BC = new Location ("Sea", String "Nothing but ocean", {1,2}, [], [], false, false)
-    Location BD = new Location ("Sea", String "Nothing but ocean", {1,3}, [], [], false, false)
-    Location BE = new Location ("Sea", String "Nothing but ocean", {1,4}, [], [], false, false)
-    Location BF = new Location ("Sea", String "Nothing but ocean", {1,5}, [], [], false, false)
-    Location BG = new Location ("Sea", String "Nothing but ocean", {1,6}, [], [], false, false)
-    Location BH = new Location ("Sea", String "Nothing but ocean", {1,7}, [], [], false, false)
-    Location BI = new Location ("Sea", String "Nothing but ocean", {1,8}, [], [], false, false)
+    Location BA = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BB = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BC = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BD = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BE = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BF = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BG = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BH = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BI = new Location ("Sea",  "Nothing but ocean",false, false);
     //Row 2
-    Location CA = new Location ("Sea", String "Nothing but ocean", {2,0}, [], [], false, false)
-    Location CB = new Location ("Sea", String "Nothing but ocean", {2,1}, [], [], false, false)
-    Location CC = new Location ("Sea", String "Nothing but ocean", {2,2}, [], [], false, false)
-    Location CD = new Location ("Sea", String "Nothing but ocean", {2,3}, [], [], false, false)
-    Location CE = new Location ("Sea", String "Nothing but ocean", {2,4}, [], [], false, false)
-    Location CF = new Location ("Sea", String "Nothing but ocean", {2,5}, [], [], false, false)
-    Location CG = new Location ("Sea", String "Nothing but ocean", {2,6}, [], [], false, false)
-    Location CH = new Location ("Sea", String "Nothing but ocean", {2,7}, [], [], false, false)
-    Location CI = new Location ("Sea", String "Nothing but ocean", {2,8}, [], [], false, false)
+    Location CA = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location CB = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location CC = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location CD = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location CE = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location CF = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location CG = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location CH = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location CI = new Location ("Sea",  "Nothing but ocean", false, false);
     //Row 
-    Location DA = new Location ("Sea", String "Nothing but ocean", {3,0}, [], [], false, false)
-    Location DB = new Location ("Sea", String "Nothing but ocean", {3,1}, [], [], false, false)
-    Location DC = new Location ("Sea", String "Nothing but ocean", {3,2}, [], [], false, false)
-    Location DD = new Location ("Sea", String "Nothing but ocean", {3,3}, [], [], false, false)
-    Location DE = new Location ("Sea", String "Nothing but ocean", {3,4}, [], [], false, false)
-    Location DF = new Location ("Sea", String "Nothing but ocean", {3,5}, [], [], false, false)
-    Location DG = new Location ("Sea", String "Nothing but ocean", {3,6}, [], [], false, false)
-    Location DH = new Location ("Sea", String "Nothing but ocean", {3,7}, [], [], false, false)
-    Location DI = new Location ("Sea", String "Nothing but ocean", {3,8}, [], [], false, false)
+    Location DA = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DB = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DC = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DD = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DE = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DF = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DG = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DH = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DI = new Location ("Sea",  "Nothing but ocean", false, false);
     //Row 4
-    Location EA = new Location ("Sea", String "Nothing but ocean", {4,0}, [], [], false, false)
-    Location EB = new Location ("Sea", String "Nothing but ocean", {4,1}, [], [], false, false)
-    Location EC = new Location ("Sea", String "Nothing but ocean", {4,2}, [], [], false, false)
-    Location ED = new Location ("Sea", String "Nothing but ocean", {4,3}, [], [], false, false)
-    Location EE = new Location ("Sea", String "Nothing but ocean", {4,4}, [], [], false, false)
-    Location EF = new Location ("Sea", String "Nothing but ocean", {4,5}, [], [], false, false)
-    Location EG = new Location ("Sea", String "Nothing but ocean", {4,6}, [], [], false, false)
-    Location EH = new Location ("Sea", String "Nothing but ocean", {4,7}, [], [], false, false)
-    Location EI = new Location ("Sea", String "Nothing but ocean", {4,8}, [], [], false, false)
+    Location EA = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location EB = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location EC = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location ED = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location EE = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location EF = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location EG = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location EH = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location EI = new Location ("Sea",  "Nothing but ocean", false, false);
     //Row 5
-    Location FA = new Location ("Sea", String "Nothing but ocean", {5,0}, [], [], false, false)
-    Location FB = new Location ("Sea", String "Nothing but ocean", {5,1}, [], [], false, false)
-    Location FC = new Location ("Sea", String "Nothing but ocean", {5,2}, [], [], false, false)
-    Location FD = new Location ("Sea", String "Nothing but ocean", {5,3}, [], [], false, false)
-    Location FE = new Location ("Sea", String "Nothing but ocean", {5,4}, [], [], false, false)
-    Location FF = new Location ("Sea", String "Nothing but ocean", {5,5}, [], [], false, false)
-    Location FG = new Location ("Sea", String "Nothing but ocean", {5,6}, [], [], false, false)
-    Location FH = new Location ("Sea", String "Nothing but ocean", {5,7}, [], [], false, false)
-    Location FI = new Location ("Sea", String "Nothing but ocean", {5,8}, [], [], false, false)
+    Location FA = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FB = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FC = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FD = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FE = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FF = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FG = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FH = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FI = new Location ("Sea",  "Nothing but ocean", false, false);
     //Row 6
-    Location GA = new Location ("Sea", String "Nothing but ocean", {6,0}, [], [], false, false)
-    Location GB = new Location ("Sea", String "Nothing but ocean", {6,1}, [], [], false, false)
-    Location GC = new Location ("Sea", String "Nothing but ocean", {6,2}, [], [], false, false)
-    Location GD = new Location ("Sea", String "Nothing but ocean", {6,3}, [], [], false, false)
-    Location GE = new Location ("Field", String "Just a field.", {6,4}, [], [], true, false)
-    Location GF = new Location ("Sea", String "Nothing but ocean", {6,5}, [], [], false, false)
-    Location GG = new Location ("Sea", String "Nothing but ocean", {6,6}, [], [], false, false)
-    Location GH = new Location ("Sea", String "Nothing but ocean", {6,7}, [], [], false, false)
-    Location GI = new Location ("Sea", String "Nothing but ocean", {6,8}, [], [], false, false)
+    Location GA = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location GB = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location GC = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location GD = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location GE = new Location ("Field",  "Just a field.", true, false);
+    Location GF = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location GG = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location GH = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location GI = new Location ("Sea",  "Nothing but ocean", false, false);
     //Row 7
-    Location HA = new Location ("Sea", String "Nothing but ocean", {7,0}, [], [], false, false)
-    Location HB = new Location ("Sea", String "Nothing but ocean", {7,1}, [], [], false, false)
-    Location HC = new Location ("Sea", String "Nothing but ocean", {7,2}, [], [], false, false)
-    Location HD = new Location ("Field", String "Just a field.", {7,3}, [], [], true, false)
-    Location HE = new Location ("Field", String "You land in a field.", {7,4}, [], [], true, false)
-    Location HF = new Location ("Field", String "Just a field.", {7,5}, [], [], true, false)
-    Location HG = new Location ("Sea", String "Nothing but ocean", {7,6}, [], [], false, false)
-    Location HH = new Location ("Sea", String "Nothing but ocean", {7,7}, [], [], false, false)
-    Location HI = new Location ("Sea", String "Nothing but ocean", {7,8}, [], [], false, false)
+    Location HA = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location HB = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location HC = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location HD = new Location ("Field",  "Just a field.", true, false);
+    Location HE = new Location ("Field",  "You land in a field.", true, false);
+    Location HF = new Location ("Field",  "Just a field.", true, false);
+    Location HG = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location HH = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location HI = new Location ("Sea",  "Nothing but ocean", false, false);
     //Row 8
-    Location IA = new Location ("Sea", String "Nothing but ocean", {8,0}, [], [], false, false)
-    Location IB = new Location ("Sea", String "Nothing but ocean", {8,1}, [], [], false, false)
-    Location IC = new Location ("Sea", String "Nothing but ocean", {8,2}, [], [], false, false)
-    Location ID = new Location ("Sea", String "Nothing but ocean", {8,3}, [], [], false, false)
-    Location IE = new Location ("Sea", String "Nothing but ocean", {8,4}, [], [], false, false)
-    Location IF = new Location ("Sea", String "Nothing but ocean", {8,5}, [], [], false, false)
-    Location IG = new Location ("Sea", String "Nothing but ocean", {8,6}, [], [], false, false)
-    Location IH = new Location ("Sea", String "Nothing but ocean", {8,7}, [], [], false, false)
-    Location II = new Location ("Sea", String "Nothing but ocean", {8,8}, [], [], false, false)
+    Location IA = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location IB = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location IC = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location ID = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location IE = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location IF = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location IG = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location IH = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location II = new Location ("Sea",  "Nothing but ocean", false, false);
   
-    map[0][1] = AA;
-    map[0][2] = AA;
-    map[0][3] = AA;
-    map[0][4] = AA;
-    map[0][5] = AA;
-    map[0][6] = AA;
-    map[0][7] = AA;
-    map[0][8] = AA;
-    map[0][9] = AA;
+    map[0][0] = AA;
+    map[0][1] = AB;
+    map[0][2] = AC;
+    map[0][3] = AD;
+    map[0][4] = AE;
+    map[0][5] = AF;
+    map[0][6] = AG;
+    map[0][7] = AH;
+    map[0][8] = AI;
     
     map[1][0] = BA;
     map[1][1] = BB;
@@ -132,15 +134,15 @@ public class GamePlay {
     map[2][7] = CH;
     map[2][8] = CI;
     
-    map[3][0] = DA:
-    map[3][1] = DB:
-    map[3][2] = DC:
-    map[3][3] = DD:
-    map[3][4] = DE:
-    map[3][5] = DF:
-    map[3][6] = DG:
-    map[3][7] = DH:
-    map[3][8] = DI:
+    map[3][0] = DA;
+    map[3][1] = DB;
+    map[3][2] = DC;
+    map[3][3] = DD;
+    map[3][4] = DE;
+    map[3][5] = DF;
+    map[3][6] = DG;
+    map[3][7] = DH;
+    map[3][8] = DI;
     
     map[4][0] = EA;
     map[4][1] = EB; 
@@ -152,25 +154,25 @@ public class GamePlay {
     map[4][7] = EH;
     map[4][8] = EI;
     
-    map[5][0] = FA:
-    map[5][1] = FB:
-    map[5][2] = FC:
-    map[5][3] = FD:
-    map[5][4] = FE:
-    map[5][5] = FF:
-    map[5][6] = FG:
-    map[5][7] = FH:
-    map[5][8] = FI:
+    map[5][0] = FA;
+    map[5][1] = FB;
+    map[5][2] = FC;
+    map[5][3] = FD;
+    map[5][4] = FE;
+    map[5][5] = FF;
+    map[5][6] = FG;
+    map[5][7] = FH;
+    map[5][8] = FI;
     
-    map[6][0] = GA:
-    map[6][1] = GB:
-    map[6][2] = GC:
-    map[6][3] = GD:
-    map[6][4] = GE:
-    map[6][5] = GF:
-    map[6][6] = GG:
-    map[6][7] = GH:
-    map[6][8] = GI:
+    map[6][0] = GA;
+    map[6][1] = GB;
+    map[6][2] = GC;
+    map[6][3] = GD;
+    map[6][4] = GE;
+    map[6][5] = GF;
+    map[6][6] = GG;
+    map[6][7] = GH;
+    map[6][8] = GI;
     
     map[7][0] = HA;
     map[7][1] = HB;
@@ -193,17 +195,18 @@ public class GamePlay {
     map[8][8] = II;
     
   }
-  public static void Intro() { //Intro Screen: Gives user choice of playing or seeing help menu
+
+  public static void Intro() { //Intro Screen; Gives user choice of playing or seeing help menu
     boolean readyToStart = false;
-    while (!readyToStart) {
-      System.out.println("BEHIND ENEMY LINES \n Welcome behind enemy lines. Type 'play' to play game, type 'help' for instructions")
-      String response  = Keyboard.readString();
+    //while (!readyToStart) {
+      System.out.println("BEHIND ENEMY LINES \n Welcome behind enemy lines. Type 'play' to play game, type 'help' for instructions");
+       /*String response  = Keyboard.readString();
       if (reponse.equals("play")) {
         readyToStart = true;
       }
       else if (response.equals("help")) {
         System.out.println("Once you are on the battlefield, you will have to fend for yourself. \n"
-        +"Some commands that might help: \n\n"
+        +"Some commands that might help; \n\n"
         +"attack - attacks specified enemy \n"
         +"search - look around at your surroundings \n"
         +"use <item> on <target> - uses specified item on target \n"
@@ -214,25 +217,27 @@ public class GamePlay {
       }
       else {
         System.out.println("invalid command");
-      }
-    }
+      }*/
+    //}
   }
   
-  public static void play() { //play method to dictate gameplay
-    while (Bob.isAlive) {
-      String response  = Keyboard.readString();
-      System.out.print(map[Bob.getXcoor()[Bob.getYcoor()])
-      System.out.println("Choose something to do:")
-      if response.equals("move") {
-        System.out.println("Choose a direction:")
-      }
-    }
+  public static void play(User b) { //play method to dictate gameplay
+    //while (b.isAlive) {
+      //String response  = Keyboard.readString();
+      System.out.println(map[b.getXcoor()][b.getYcoor()]);
+      System.out.println("Choose something to do;");
+      //if (response.equals("move")) {
+       // System.out.println("Choose a direction;");
+      //}
+    //}
   }
+
   public static String whatJustHappened(){
     String retStr = "You have just";
     return retStr;
   }
-  public static void main(String[] args) {
+
+  public static void main(String [] args) {
     Run();
 }
 }
