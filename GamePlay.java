@@ -135,7 +135,6 @@ public class GamePlay {
     return retStr;
   }
   public static void main(String[] args) {
-    Intro();
-    play();
+    Run();
 }
 }
