@@ -1,9 +1,6 @@
 //class Entities: superclass for the players and all living things in the game.
 public interface Entities {
-  protected double hp, dmg;
-  protected String name, desc;
-  protected ArrayList<Objects> inventory;
-  protected boolean isAlive;
+  
   String getName();
   String getDesc();
   
