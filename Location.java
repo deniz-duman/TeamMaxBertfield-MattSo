@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class Location {
   private String _name, _desc;
-  private int[] _coor;
   private ArrayList<Objects> _objects;
   private ArrayList<Entities> _entities;
   private boolean isPassable, isGoal;
@@ -13,17 +12,14 @@ public class Location {
     boolean isGoal = false;
   }
   
-  public Location (String name, String desc, int[] coor, ArrayList<Objects> objs, ArrayList<Entities> ents, boolean pass, boolean goal) {
+  public Location (String name, String desc, boolean pass, boolean goal) {
     _name = name;
     _desc = desc;
-    _coor = coor;
-    _objects = new ArrayList<Objects>();
-    _entities = new ArrayList<Entities>();
     isPassable = pass;
     isGoal = goal;
   }
   
-  public static String toString() {
+  public String toString() {
     String retStr = _name + "\n\n" + _desc;
     return retStr;
     
@@ -45,7 +41,6 @@ public class Location {
   //=========================================Accessors=================================================================\\
   public String getName()      {return _name;}
   public String getDesc()      {return _desc;}
-  public int[]  getCoor()      {return _coor;}
   public Objects getObj(int i) {return _objects.get(i);}
   public Entities getEnt(int i){return _entities.get(i);}
   public boolean getPass()     {return isPassable;}
