@@ -8,8 +8,10 @@ public class GamePlay {
   }
   
   public static void CreateWorld() {
-    User Bob = new User();
-    
+    User Bob = new User(); //makes user
+    //hardcodes each location on the map
+    Location A = Location ("Sea", String "Nothing but ocean", {1,1}, [], [], false, false)
+    Location A = Location ("Sea", String "Nothing but ocean", {1,1}, [], [], false, false)
   }
   public static void Intro() { //Intro Screen: Gives user choice of playing or seeing help menu
     boolean readyToStart = false;
