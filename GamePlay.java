@@ -200,7 +200,7 @@ public class GamePlay {
     boolean readyToStart = false;
     while (!readyToStart) {
       System.out.println("BEHIND ENEMY LINES \n Welcome behind enemy lines. Type 'play' to play game, type 'help' for instructions");
-      String response = Keyboard.readString();
+       String response  = Keyboard.readString();
       if (response.equals("play")) {
         readyToStart = true;
       }
@@ -220,16 +220,27 @@ public class GamePlay {
       }
     }
   }
-  
+  public static void move();
+	System.out.println("Choose a cardinal direction;");
+	response = Keyboard.readString();
+		if (response.equals("north")) {
+			
+		else if (response.equals("south")) {
+		else if (response.equals("east")) {
+		else if (response.equals("west")) {
+		else {
+			System.out.println("That is not a cardinal direction.");
+		}
   public static void play(User b) { //play method to dictate gameplay
-    //while (b.isAlive) {
-      //String response  = Keyboard.readString();
+    while (b.isAlive) {
       System.out.println(map[b.getXcoor()][b.getYcoor()]);
-      System.out.println("Choose something to do;");
-      //if (response.equals("move")) {
-        //System.out.println("Choose a direction;");
-      //}
-    //}
+      System.out.println("Choose something to do:");
+      String response = Keyboard.readString();
+      if (response.equals("move")) {
+	move();
+        
+      }
+    }
   }
 
   public static String whatJustHappened(){
