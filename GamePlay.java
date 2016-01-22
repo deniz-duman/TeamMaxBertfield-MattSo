@@ -224,7 +224,7 @@ public class GamePlay {
 	System.out.println("Choose a cardinal direction;");
 	response = Keyboard.readString();
 		if (response.equals("north")) {
-			
+			if (map[User.getxcor()+1][User.getycor()].
 		else if (response.equals("south")) {
 		else if (response.equals("east")) {
 		else if (response.equals("west")) {
