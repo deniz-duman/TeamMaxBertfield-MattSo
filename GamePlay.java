@@ -220,7 +220,7 @@ public class GamePlay {
       }
     }
   }
-  public static void move(){
+  public void move(){
 	System.out.println("Choose a cardinal direction:");
 	String response = Keyboard.readString();
 		if (response.equals("north")) {
@@ -253,7 +253,7 @@ public class GamePlay {
 		}
   }
   
-  public static void drop() {
+  public void drop() {
   	
   }
   
