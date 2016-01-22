@@ -222,7 +222,7 @@ public class GamePlay {
   }
   public static void move(){
 	System.out.println("Choose a cardinal direction:");
-	response = Keyboard.readString();
+	String response = Keyboard.readString();
 		if (response.equals("north")) {
 			if (map[User.getXcoor()][User.getYcoor()+1].getPass()) {
 				User.setYcoor(getYcoor()+1);
@@ -251,6 +251,10 @@ public class GamePlay {
 		else {
 			System.out.println("That is not a cardinal direction.");
 		}
+  }
+  
+  public static void drop() {
+  	
   }
   
   
