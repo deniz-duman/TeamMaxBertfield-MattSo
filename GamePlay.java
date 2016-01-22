@@ -224,25 +224,25 @@ public class GamePlay {
 	System.out.println("Choose a cardinal direction;");
 	response = Keyboard.readString();
 		if (response.equals("north")) {
-			if (map[User.getXcoor()][User.getYcoor()+1].getPass()){
+			if (map[User.getXcoor()][User.getYcoor()+1].getPass()) {
 				User.setYcoor(getYcoor()+1);
 			}
 			else {System.out.println(map[User.getXcoor()][User.getYcoor()+1].getDesc());}
 		else if (response.equals("south")) {
-			if (map[User.getXcoor()][User.getYcoor()-1].getPass()){
+			if (map[User.getXcoor()][User.getYcoor()-1].getPass()) {
 				User.setYcoor(getYcoor()-1);
 			}
 			else {System.out.println(map[User.getXcoor()][User.getYcoor()-1].getDesc());}
 			
 		
 		else if (response.equals("east")) {
-			if (map[User.getXcoor()+1][User.getYcoor()].getPass()){
+			if (map[User.getXcoor()+1][User.getYcoor()].getPass()) {
 				User.setXcoor(getXcoor()+1);
 			}
 			else {System.out.println(map[User.getXcoor()+1][User.getYcoor()].getDesc());}
 
 		else if (response.equals("west")) {
-			if (map[User.getXcoor()-1][User.getYcoor()].getPass()){
+			if (map[User.getXcoor()-1][User.getYcoor()].getPass()) {
 				User.setXcoor(getXcoor()-1);
 			}
 			else {System.out.println(map[User.getXcoor()-1][User.getYcoor()].getDesc());}
@@ -257,8 +257,12 @@ public class GamePlay {
       String response = Keyboard.readString();
       if (response.equals("move")) {
 	move();
-        
       }
+      
+      else if (response.equals("drop")) {
+      	drop();
+      }
+      
     }
   }
 
