@@ -23,46 +23,46 @@ public class User implements Entities{
     isAlive = true;
   }
   
-  public static String getName() {
+  public String getName() {
       return name;
   }
   
-  public static String getDesc() {
+  public String getDesc() {
     return desc;
   }
   
-  public static double getHP() {
+  public double getHP() {
     return hp;
   }
   
-  public static int getXcoor() {
+  public int getXcoor() {
     return xcoor;
   }
   
-  public static int getYcoor() {
+  public int getYcoor() {
     return ycoor;
   }
   
-  public static double setHP(double newHealth) {
+  public double setHP(double newHealth) {
     double oldhp = hp;
     hp = newHealth;
     return hp;
   }
   
-  public static double getDMG() {
+  public double getDMG() {
     return dmg;
   }
   
-  public static double setDMG(double newDMG) {
+  public double setDMG(double newDMG) {
     double olddmg = dmg;
     dmg = newDMG;
     return olddmg;
   }
-  public static void attack(double damage, Entities ent) {
+  public void attack(double damage, Entities ent) {
     ent.setHP(ent.getHP() - damage);
   }
   
-  public static void setLoc(int x, int y) {
+  public void setLoc(int x, int y) {
     currlocation[7] = x;
     xcoor = x;
     currlocation[4] = y;
