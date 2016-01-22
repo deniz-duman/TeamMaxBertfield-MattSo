@@ -220,36 +220,40 @@ public class GamePlay {
       }
     }
   }
-  public static void move();
-	System.out.println("Choose a cardinal direction;");
+  public static void move(){
+	System.out.println("Choose a cardinal direction:");
 	response = Keyboard.readString();
 		if (response.equals("north")) {
 			if (map[User.getXcoor()][User.getYcoor()+1].getPass()) {
 				User.setYcoor(getYcoor()+1);
 			}
 			else {System.out.println(map[User.getXcoor()][User.getYcoor()+1].getDesc());}
+		}
 		else if (response.equals("south")) {
 			if (map[User.getXcoor()][User.getYcoor()-1].getPass()) {
 				User.setYcoor(getYcoor()-1);
 			}
 			else {System.out.println(map[User.getXcoor()][User.getYcoor()-1].getDesc());}
-			
+		}	
 		
 		else if (response.equals("east")) {
 			if (map[User.getXcoor()+1][User.getYcoor()].getPass()) {
 				User.setXcoor(getXcoor()+1);
 			}
 			else {System.out.println(map[User.getXcoor()+1][User.getYcoor()].getDesc());}
-
+		}
 		else if (response.equals("west")) {
 			if (map[User.getXcoor()-1][User.getYcoor()].getPass()) {
 				User.setXcoor(getXcoor()-1);
 			}
 			else {System.out.println(map[User.getXcoor()-1][User.getYcoor()].getDesc());}
-
+		}
 		else {
 			System.out.println("That is not a cardinal direction.");
 		}
+  }
+  
+  
   public static void play(User b) { //play method to dictate gameplay
     while (b.isAlive) {
       System.out.println(map[b.getXcoor()][b.getYcoor()]);
@@ -266,10 +270,6 @@ public class GamePlay {
     }
   }
 
-  public static String whatJustHappened(){
-    String retStr = "You have just";
-    return retStr;
-  }
 
   public static void main(String [] args) {
     Run();
