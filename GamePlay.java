@@ -283,7 +283,15 @@ public class GamePlay {
      System.out.println("Choose an item in your inventory to drop:");
   	 System.out.println(DT.toStringInv());
      String response = Keyboard.readString();
-        
+     for (Objects o : DT.getInv()) {
+        if (o.getType().equals(response)) {
+            DT.delInv(o);
+            map[DT.getXcoor()][DT.getYcoor()].AddtoObj(o);
+            System.out.println("You have dropped " + response);
+            return;
+        }
+     }
+    System.out.println("You have no " + response + " in your inventory");  
   }
   
   
