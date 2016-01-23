@@ -1,4 +1,6 @@
 //class User; subclass of Entities
+import java.util.ArrayList;
+
 public class User implements Entities{
   private double hp = 0;
   private double dmg = 0;
@@ -9,6 +11,7 @@ public class User implements Entities{
   private double hunger;
   private int[] currlocation;
   private int xcoor, ycoor;
+  private ArrayList<Objects> inventory = new ArrayList<Objects>();
   
   public User(){
     
@@ -78,4 +81,23 @@ public class User implements Entities{
     ycoor = y;
   }
   
+  public ArrayList<Objects> getInv() {
+    return inventory;
+  }
+
+  public String toStringInv() {
+    String retStr = "--{";
+    for (Objects o : inventory) {
+      retStr += " " + o + " ";
+    }
+    return retStr + "}--";
+  }
+
+  public void addInv(Objects o) {
+    inventory.add(o);
+  }
+
+  public void delInv(Objects o) {
+    inventory.remove(o);
+  }
 }
