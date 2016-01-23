@@ -103,7 +103,8 @@ public class GamePlay {
     Location IG = new Location ("Sea",  "Nothing but ocean", false, false);
     Location IH = new Location ("Sea",  "Nothing but ocean", false, false);
     Location II = new Location ("Sea",  "Nothing but ocean", false, false);
-  
+    
+    //Assign each Location to a position on map
     map[0][0] = AA;
     map[0][1] = AB;
     map[0][2] = AC;
@@ -204,7 +205,7 @@ public class GamePlay {
       if (response.equals("play")) {
         readyToStart = true;
       }
-      else if (response.equals("help")) {
+      else if (response.equals("help")) {//help menu
         System.out.println("`Once you are on the battlefield, you will have to fend for yourself. \n"
         +"Some commands that might help; \n\n"
         +"attack - attacks specified enemy \n"
@@ -218,6 +219,22 @@ public class GamePlay {
       else {
         System.out.println("invalid command");
       }
+    }
+  }
+  
+  public static void play(User b) { //play method to dictate gameplay
+    while (b.isAlive) {
+      System.out.println(map[b.getXcoor()][b.getYcoor()]);
+      System.out.println("Choose something to do:");
+      String response = Keyboard.readString();
+      if (response.equals("move")) {
+	move();
+      }
+      
+      else if (response.equals("drop")) {
+      	drop();
+      }
+      
     }
   }
   public void move(){
@@ -258,21 +275,7 @@ public class GamePlay {
   }
   
   
-  public static void play(User b) { //play method to dictate gameplay
-    while (b.isAlive) {
-      System.out.println(map[b.getXcoor()][b.getYcoor()]);
-      System.out.println("Choose something to do:");
-      String response = Keyboard.readString();
-      if (response.equals("move")) {
-	move();
-      }
-      
-      else if (response.equals("drop")) {
-      	drop();
-      }
-      
-    }
-  }
+
 
 
   public static void main(String [] args) {
