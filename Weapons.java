@@ -2,9 +2,9 @@
 public class Weapons implements Objects{
 	private String _type = "";
   	private String _desc = "";
-  	private int _dmg;
+  	private double _dmg;
 
-  	public Weapons(String type, String desc, int dmg){
+  	public Weapons(String type, String desc, double dmg){
     	_type = type;
     	_desc = desc;
     	_dmg = dmg;
@@ -21,4 +21,7 @@ public class Weapons implements Objects{
    		return getType();
   }
 
+  	public double getDMG() {
+  		return dmg;
+  	}
 }
