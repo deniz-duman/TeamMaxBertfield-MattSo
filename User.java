@@ -42,7 +42,15 @@ public class User implements Entities{
   public int getYcoor() {
     return ycoor;
   }
-  
+
+  public void setXcoor(int i) {
+    xcoor = i;
+  }
+
+  public void setYcoor(int i) {
+    ycoor = i;
+  }
+
   public double setHP(double newHealth) {
     double oldhp = hp;
     hp = newHealth;
@@ -58,6 +66,7 @@ public class User implements Entities{
     dmg = newDMG;
     return olddmg;
   }
+
   public void attack(double damage, Entities ent) {
     ent.setHP(ent.getHP() - damage);
   }
