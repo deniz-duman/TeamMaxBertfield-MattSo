@@ -21,7 +21,6 @@ public class User implements Entities{
     hp = 100.0;
     dmg = 10.0;
     hunger = 0;
-    ammo = 0;
     currlocation = new int[2];
     isAlive = true;
   }
