@@ -1,4 +1,5 @@
 //Driver Class
+import java.util.ArrayList;
 public class GamePlay {
   public static Location[][] map = new Location[9][9];
   public static User DT = new User(); //makes user
@@ -211,9 +212,10 @@ public class GamePlay {
         +"attack - attacks specified enemy \n"
         +"search - look around at your surroundings \n"
         +"use - uses specified item on a target \n"
-        +"move - go to your desired location \n"
-        +"pickup - pick up specified object"
-        +"drop - drop item \n\n"
+        +"move - go to desired location \n"
+        +"inventory - view inventory \n"
+        +"pickup - pick up specified object\n"
+        +"drop - drop item from inventory\n\n"
         +"Use these commands for your advantage. Good luck.");
       }
       else {
@@ -230,13 +232,16 @@ public class GamePlay {
       if (response.equals("move")) {
 	       move();
       }
-      
+      else if (response.equals("inventory")) {
+           inventory();
+      }
       else if (response.equals("drop")) {
-      	 drop();
+      	   drop();
       }
       
     }
   }
+  //move: go in desired direction
   public static void move(){
 	System.out.println("Choose a cardinal direction:");
 	String response = Keyboard.readString();
@@ -269,10 +274,18 @@ public class GamePlay {
 			System.out.println("That is not a cardinal direction.");
 		}
   }
-  
-  public static void drop() {
-  	
+  //inventory: view inventory
+  public static void inventory() {
+    System.out.println(DT.toStringInv());
   }
+
+  public static void drop() {
+     System.out.println("Choose an item in your inventory to drop:");
+  	 System.out.println(DT.toStringInv());
+     String response = Keyboard.readString();
+        
+  }
+  
   
   public static void main(String [] args) {
     Run();
