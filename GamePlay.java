@@ -214,7 +214,7 @@ public class GamePlay {
         +"use - uses specified item on a target \n"
         +"move - go to desired location \n"
         +"inventory - view inventory \n"
-        +"pickup - pick up specified object\n"
+        +"pick up - pick up specified object\n"
         +"drop - drop item from inventory\n\n"
         +"Use these commands for your advantage. Good luck.");
       }
@@ -230,15 +230,17 @@ public class GamePlay {
       System.out.println("Choose something to do:");
       String response = Keyboard.readString();
       if (response.equals("move")) {
-	       move();
+	        move();
       }
       else if (response.equals("inventory")) {
-           inventory();
+            inventory();
       }
       else if (response.equals("drop")) {
-      	   drop();
+            drop();
       }
-      
+      else if (response.equals("pick up")) {
+            pickup();
+      }
     }
   }
   //move: go in desired direction
@@ -274,11 +276,13 @@ public class GamePlay {
 			System.out.println("That is not a cardinal direction.");
 		}
   }
+
   //inventory: view inventory
   public static void inventory() {
     System.out.println(DT.toStringInv());
   }
 
+  //drop: drop item from inventory
   public static void drop() {
      System.out.println("Choose an item in your inventory to drop:");
   	 System.out.println(DT.toStringInv());
@@ -287,11 +291,26 @@ public class GamePlay {
         if (o.getType().equals(response)) {
             DT.delInv(o);
             map[DT.getXcoor()][DT.getYcoor()].AddtoObj(o);
-            System.out.println("You have dropped " + response);
+            System.out.println("You have dropped your" + response);
             return;
         }
      }
     System.out.println("You have no " + response + " in your inventory");  
+  }
+
+  //pickup: pick up item from inventory
+  public static void pickup() {
+     System.out.println("Choose an item to pick up:");
+     String response = Keyboard.readString();
+     for (Objects o : map[DT.getXcoor()][DT.getYcoor()].getObjArr()) {
+        if (o.getType().equals(response)) {
+            DT.addInv(o);
+            map[DT.getXcoor()][DT.getYcoor()].DelObj(o);
+            System.out.println("You have picked up a " + response);
+            return;
+        }
+     }
+    System.out.println("There are no " + response + " around these parts");  
   }
   
   
