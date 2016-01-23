@@ -21,6 +21,10 @@ public class Food implements Objects{
   }
    	public String ToString() {
    		return getType();
-   	}
+  }
+  
+  	public int getFillinglvl() {
+  		return fillinglvl;
+  }
 
 }
