@@ -70,8 +70,8 @@ public class User implements Entities{
     return olddmg;
   }
 
-  public void attack(double damage, Entities ent) {
-    ent.setHP(ent.getHP() - damage);
+  public void attack(double damage, AI ai) {
+    ai.setHP(ai.getHP() - damage);
   }
   
   public void setLoc(int x, int y) {
