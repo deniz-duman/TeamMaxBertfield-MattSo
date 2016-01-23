@@ -47,6 +47,7 @@ public class Location {
   public String getDesc()              {return _desc;}
   public ArrayList<Objects> getObjArr(){return _objects;}
   public Objects getObj(int i)         {return _objects.get(i);}
+  public ArrayList<Entities> getObjArr(){return _entities;}
   public Entities getEnt(int i)        {return _entities.get(i);}
   public boolean getPass()             {return isPassable;}
 
