@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class Location {
   private String _name, _desc;
-  private ArrayList<Objects> _objects;
-  private ArrayList<Entities> _entities;
+  private ArrayList<Objects> _objects = new ArrayList<Objects>();
+  private ArrayList<Entities> _entities = new ArrayList<Entities>();
   private boolean isPassable, isGoal;
   //=========================================Constructors and ToString===================================================\\
   public Location(){
@@ -12,11 +12,15 @@ public class Location {
     boolean isGoal = false;
   }
   
+  public Location(Objects O){
+    _objects.add(O);
+  }
   public Location (String name, String desc, boolean pass, boolean goal) {
     _name = name;
     _desc = desc;
     isPassable = pass;
     isGoal = goal;
+
   }
   
   public String toString() {
@@ -39,11 +43,12 @@ public class Location {
     return _entities.set(i, E);
   }
   //=========================================Accessors=================================================================\\
-  public String getName()      {return _name;}
-  public String getDesc()      {return _desc;}
-  public Objects getObj(int i) {return _objects.get(i);}
-  public Entities getEnt(int i){return _entities.get(i);}
-  public boolean getPass()     {return isPassable;}
+  public String getName()              {return _name;}
+  public String getDesc()              {return _desc;}
+  public ArrayList<Objects> getObjArr(){return _objects;}
+  public Objects getObj(int i)         {return _objects.get(i);}
+  public Entities getEnt(int i)        {return _entities.get(i);}
+  public boolean getPass()             {return isPassable;}
 
   //========================================Methods===================================================================\\
   //Add to Objects ArrayList
