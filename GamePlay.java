@@ -1,14 +1,14 @@
 //Driver Class
 public class GamePlay {
   public static Location[][] map = new Location[9][9];
+  public static User DT = new User(); //makes user
   //public static InputStreamReader isr;
   //public static BufferedReader in;
   
   public static void Run() {
     CreateWorld();
     Intro();
-    User Bob = new User(); //makes user
-    play(Bob);
+    play();
   }
   
   public static void CreateWorld() {
@@ -222,62 +222,58 @@ public class GamePlay {
     }
   }
   
-  public static void play(User b) { //play method to dictate gameplay
-    while (b.isAlive) {
-      System.out.println(map[b.getXcoor()][b.getYcoor()]);
+  public static void play() { //play method to dictate gameplay
+    while (DT.isAlive) {
+      System.out.println(map[DT.getXcoor()][DT.getYcoor()]);
       System.out.println("Choose something to do:");
       String response = Keyboard.readString();
       if (response.equals("move")) {
-	move();
+	       move();
       }
       
       else if (response.equals("drop")) {
-      	drop();
+      	 drop();
       }
       
     }
   }
-  public void move(){
+  public static void move(){
 	System.out.println("Choose a cardinal direction:");
 	String response = Keyboard.readString();
 		if (response.equals("north")) {
-			if (map[User.getXcoor()][User.getYcoor()+1].getPass()) {
-				User.setYcoor(getYcoor()+1);
+			if (map[DT.getXcoor()][DT.getYcoor()+1].getPass()) {
+				DT.setYcoor(DT.getYcoor()+1);
 			}
-			else {System.out.println(map[User.getXcoor()][User.getYcoor()+1].getDesc());}
+			else {System.out.println(map[DT.getXcoor()][DT.getYcoor()+1].getDesc());}
 		}
 		else if (response.equals("south")) {
-			if (map[User.getXcoor()][User.getYcoor()-1].getPass()) {
-				User.setYcoor(getYcoor()-1);
+			if (map[DT.getXcoor()][DT.getYcoor()-1].getPass()) {
+				DT.setYcoor(DT.getYcoor()-1);
 			}
-			else {System.out.println(map[User.getXcoor()][User.getYcoor()-1].getDesc());}
+			else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
 		}	
 		
 		else if (response.equals("east")) {
-			if (map[User.getXcoor()+1][User.getYcoor()].getPass()) {
-				User.setXcoor(getXcoor()+1);
+			if (map[DT.getXcoor()+1][DT.getYcoor()].getPass()) {
+				DT.setXcoor(DT.getXcoor()+1);
 			}
-			else {System.out.println(map[User.getXcoor()+1][User.getYcoor()].getDesc());}
+			else {System.out.println(map[DT.getXcoor()+1][DT.getYcoor()].getDesc());}
 		}
 		else if (response.equals("west")) {
-			if (map[User.getXcoor()-1][User.getYcoor()].getPass()) {
-				User.setXcoor(getXcoor()-1);
+			if (map[DT.getXcoor()-1][DT.getYcoor()].getPass()) {
+				DT.setXcoor(DT.getXcoor()-1);
 			}
-			else {System.out.println(map[User.getXcoor()-1][User.getYcoor()].getDesc());}
+			else {System.out.println(map[DT.getXcoor()-1][DT.getYcoor()].getDesc());}
 		}
 		else {
 			System.out.println("That is not a cardinal direction.");
 		}
   }
   
-  public void drop() {
+  public static void drop() {
   	
   }
   
-  
-
-
-
   public static void main(String [] args) {
     Run();
 }
