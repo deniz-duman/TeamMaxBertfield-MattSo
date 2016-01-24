@@ -233,7 +233,7 @@ public class GamePlay {
       System.out.println("Choose something to do:");
       String response = Keyboard.readString();
       if (response.equals("move")) {
-	        move();
+          move();
       }
       else if (response.equals("inventory")) {
             inventory();
@@ -245,47 +245,106 @@ public class GamePlay {
             pickup();
       }
       else if (response.equals("attack")) {
-      	    attack();
+            attack();
       }
       else if (response.equals("search")) {
-      	    if (searches > 0) {
-      	    	System.out.println("Entities at this location:" + map[DT.getXcoor()][DT.getYcoor()].printEnt());
-      	    	System.out.println("Objects at this location:" + map[DT.getXcoor()][DT.getYcoor()].printObj());
-      	    	searches -= 1;
-      	    }
-      	    else {
-      	    	System.out.println("You do not have any searches left ya lazy.");
-      	    }
+            if (searches > 0) {
+              System.out.println("Entities at this location:" + map[DT.getXcoor()][DT.getYcoor()].printEnt());
+              System.out.println("Objects at this location:" + map[DT.getXcoor()][DT.getYcoor()].printObj());
+              searches -= 1;
+            }
+            else {
+              System.out.println("You do not have any searches left ya lazy.");
+            }
       }
       else if (response.equals("eat")) {
-      	eat();
+        eat();
       }
       else if (response.equals("use")) {
-      	
+        
       }
       else if (response.equals("talk")) {
-      	talk();
+        talk();
       }
       else {
-      	System.out.println("That is not a valid action.");
+        System.out.println("That is not a valid action.");
       }
     }
   }
   
-  public static void use(){}
-  
+  public static void use(){
+    System.out.println("What do you want to use?");
+    System.out.println(DT.toStringInv());
+    String response = Keyboard.readString();
+    //if item selected is food
+    for (Objects o : DT.getInv()) {
+      if (o instanceof Food && o.getType().equals(response)) {
+        Food f = (Food)o;
+        DT.setHun(f.getFillinglvl());
+        DT.setHP(DT.getHP() + (double)(f.getFillinglvl() * 5.0));
+        return;
+      }
+    //if item selected is gun
+      else if (o instanceof Weapons && o.getType().equals(response)) {
+        double dam = DT.getDMG(), dam2;
+        dam += ((double)(Math.random() * ((((Weapons)o).getDMG() + 4) - (((Weapons)o).getDMG() - 4)) + (((Weapons)o).getDMG() - 4)));
+        System.out.println(response + "is now equipped. Choose enemy to attack:");
+        String response2 = Keyboard.readString();
+        for (AI e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
+          if (!e.getName().equals(response2) || !e.isFriend) {
+            dam2 = (double)(Math.random() * ((e.getDMG() + 4) - (e.getDMG() - 4)) + (e.getDMG() - 4));
+            DT.attack(dam, e);
+            System.out.println(dam + " points of damage done to " + response);
+              e.attack(dam2, DT);
+              System.out.println(dam2 + " points of damage taken.");
+              if (DT.getHP() <= 0) {
+                DT.die();
+              }
+              if (e.getHP() <= 0) {
+                e.die(); 
+                dropAI(e); 
+                map[DT.getXcoor()][DT.getYcoor()].DelEnt(e);
+              }
+              return;
+            }
+          }
+          System.out.println(response2 + " is not an enemy."); 
+          return;
+      }
+      else if (o instanceof Items && o.getType().equals(response)) {
+        System.out.println("Use " + response + " with:");
+        String response2 = Keyboard.readString();
+        for (Objects O: map[DT.getXcoor()][DT.getYcoor()].getObjArr()) {
+          if (O instanceof Items && O.getType().equals(response2)) {
+            Items i = (Items)O;
+            if (i.isCompatible((Items)o)) {
+              System.out.println("You used " + response + " on " + response2);
+              //calling specific consequence methods:
+              if (o.getType().equals("hatchet") && i.getType().equals("parachute")) {
+                hatchetparachute();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  public static void hatchetparachute() {
+
+  }
   public static void eat(){
-  	System.out.println("Choose item to eat");
-  	System.out.println(DT.toStringInv());
-        String response = Keyboard.readString();	
-  	for (Objects o : DT.getInv()) {
-        	if (o instanceof Food && o.getType().equals(response)) {
+    System.out.println("Choose item to eat");
+    System.out.println(DT.toStringInv());
+        String response = Keyboard.readString();  
+    for (Objects o : DT.getInv()) {
+          if (o instanceof Food && o.getType().equals(response)) {
               Food f = (Food)o;
-            	DT.setHun(f.getFillinglvl());
-            	DT.setHP(DT.getHP() + (double)(f.getFillinglvl() * 5.0));
-            	return;
-        	}
-        	else {
+              DT.setHun(f.getFillinglvl());
+              DT.setHP(DT.getHP() + (double)(f.getFillinglvl() * 5.0));
+              return;
+          }
+          else {
             System.out.println("Don't eat that...that's not food."); 
             return;
           }
@@ -295,86 +354,87 @@ public class GamePlay {
 
   
   public static void talk(){
-  	System.out.println("Choose entity to talk to:");
-  	String response = Keyboard.readString();
-  	for (AI e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
-  		if (e.getName().equals(response) && e.isFriend) {
-  			System.out.println(e.getInfo());
-  			return;
-  		}
-  		else {System.out.println("You can not talk to " + response + "."); return;}
-  	}
-  	System.out.println(response + " does not exist here.");
+    System.out.println("Choose entity to talk to:");
+    String response = Keyboard.readString();
+    for (AI e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
+      if (e.getName().equals(response) && e.isFriend) {
+        System.out.println(e.getInfo());
+        return;
+      }
+      else {System.out.println("You can not talk to " + response + "."); return;}
+    }
+    System.out.println(response + " does not exist here.");
   }
   
   public static void attack(){
-  	double dam = DT.getDMG(), dam2;
-  	System.out.println("Choose weapon to use:");
-  	System.out.println(DT.toStringInv());
-  	String response = Keyboard.readString();
-  	for (Objects o : DT.getInv()) {
-        	if (o instanceof Weapons && o.getType().equals(response)) {
-        		dam += ((double)(Math.random() * ((((Weapons)o).getDMG() + 4) - (((Weapons)o).getDMG() - 4)) + (((Weapons)o).getDMG() - 4)));
-        	}
-        	else {
-        		System.out.println(response + " is not a weapon in your inventory.");
-        	}
-  	}
-  	System.out.println(response + "is now equipped. Choose enemy to attack:");
-  	for (AI e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
-  		if (!e.getName().equals(response) || !e.isFriend) {
-  			dam2 = (double)(Math.random() * ((e.getDMG() + 4) - (e.getDMG() - 4)) + (e.getDMG() - 4));
-  			DT.attack(dam, e);
-  			System.out.println(dam + " points of damage done to " + response);
-  			e.attack(dam2, DT);
-  			System.out.println(dam2 + " points of damage taken.");
-  			if (DT.getHP() <= 0) {
+    double dam = DT.getDMG(), dam2;
+    System.out.println("Choose weapon to use:");
+    System.out.println(DT.toStringInv());
+    String response = Keyboard.readString();
+    for (Objects o : DT.getInv()) {
+          if (o instanceof Weapons && o.getType().equals(response)) {
+            dam += ((double)(Math.random() * ((((Weapons)o).getDMG() + 4) - (((Weapons)o).getDMG() - 4)) + (((Weapons)o).getDMG() - 4)));
+          }
+          else {
+            System.out.println(response + " is not a weapon in your inventory.");
+          }
+    }
+    System.out.println(response + "is now equipped. Choose enemy to attack:");
+    response = Keyboard.readString();
+    for (AI e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
+      if (!e.getName().equals(response) || !e.isFriend) {
+        dam2 = (double)(Math.random() * ((e.getDMG() + 4) - (e.getDMG() - 4)) + (e.getDMG() - 4));
+        DT.attack(dam, e);
+        System.out.println(dam + " points of damage done to " + response);
+        e.attack(dam2, DT);
+        System.out.println(dam2 + " points of damage taken.");
+        if (DT.getHP() <= 0) {
           DT.die();
         }
-  			if (e.getHP() <= 0) {
+        if (e.getHP() <= 0) {
           e.die(); 
           dropAI(e); 
           map[DT.getXcoor()][DT.getYcoor()].DelEnt(e);
         }
-  			return;
-  		}
-  		else {System.out.println(response + " is not an enemy."); return;}
-  	}
-  	System.out.println(response + " does not exist here.");
+        return;
+      }
+      else {System.out.println(response + " is not an enemy."); return;}
+    }
+    System.out.println(response + " does not exist here.");
   }
   
   //move: go in desired direction
   public static void move(){
-	System.out.println("Choose a cardinal direction:");
-	String response = Keyboard.readString();
-		if (response.equals("north")) {
-			if (map[DT.getXcoor()][DT.getYcoor()+1].getPass()) {
-				DT.setYcoor(DT.getYcoor()+1);
-			}
-			else {System.out.println("Cant go.");}
-		}
-		else if (response.equals("south")) {
-			if (map[DT.getXcoor()][DT.getYcoor()-1].getPass()) {
-				DT.setYcoor(DT.getYcoor()-1);
-			}
-			else {System.out.println("Cant go.");}
-		}	
-		
-		else if (response.equals("east")) {
-			if (map[DT.getXcoor()+1][DT.getYcoor()].getPass()) {
-				DT.setXcoor(DT.getXcoor()+1);
-			}
-			else {System.out.println("Cant go.");}
-		}
-		else if (response.equals("west")) {
-			if (map[DT.getXcoor()-1][DT.getYcoor()].getPass()) {
-				DT.setXcoor(DT.getXcoor()-1);
-			}
-			else {System.out.println("Cant go.");}
-		}
-		else {
-			System.out.println("That is not a cardinal direction.");
-		}
+  System.out.println("Choose a cardinal direction:");
+  String response = Keyboard.readString();
+    if (response.equals("north")) {
+      if (map[DT.getXcoor()][DT.getYcoor()+1].getPass()) {
+        DT.setYcoor(DT.getYcoor()+1);
+      }
+      else {System.out.println("Cant go.");}
+    }
+    else if (response.equals("south")) {
+      if (map[DT.getXcoor()][DT.getYcoor()-1].getPass()) {
+        DT.setYcoor(DT.getYcoor()-1);
+      }
+      else {System.out.println("Cant go.");}
+    } 
+    
+    else if (response.equals("east")) {
+      if (map[DT.getXcoor()+1][DT.getYcoor()].getPass()) {
+        DT.setXcoor(DT.getXcoor()+1);
+      }
+      else {System.out.println("Cant go.");}
+    }
+    else if (response.equals("west")) {
+      if (map[DT.getXcoor()-1][DT.getYcoor()].getPass()) {
+        DT.setXcoor(DT.getXcoor()-1);
+      }
+      else {System.out.println("Cant go.");}
+    }
+    else {
+      System.out.println("That is not a cardinal direction.");
+    }
   }
 
   //inventory: view inventory
@@ -385,7 +445,7 @@ public class GamePlay {
   //drop: drop item from inventory
   public static void drop() {
      System.out.println("Choose an item in your inventory to drop:");
-  	 System.out.println(DT.toStringInv());
+     System.out.println(DT.toStringInv());
      String response = Keyboard.readString();
      for (Objects o : DT.getInv()) {
         if (o.getType().equals(response)) {
