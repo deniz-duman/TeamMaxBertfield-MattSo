@@ -25,6 +25,11 @@ public class AI implements Entities{
   public double getHP() {
     return hp;
   }
+
+  public ArrayList<Objects> getInv() {
+    return inventory;
+  }
+
   public double setHP(double newHealth) { 
     double temp = hp;
     hp = newHealth;
