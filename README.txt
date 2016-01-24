@@ -12,12 +12,12 @@ Best of luck soldier, now FALL OUT!
 
 Instructions for use:
 
-1. To start our game you must first download the foler containing all the game files (As you are reading this, 
+1. To start our game you must first download the folder containing all the game files (As you are reading this, 
    I can safely assume you've alreay done this).
 
 2. Open up Command Prompt (or Terminal in Mac or Ubuntu).
 
-3. From there using the cd command, change your directory until you get to the folder taht contains the game folders.
+3. From there using the cd command, change your directory until you get to the folder that contains the game folders.
 
 4. Now you must write the command javac then each java file name in the folder (e.g: >javac GamePlay.java).
 
