@@ -255,6 +255,18 @@ public class GamePlay {
       	    	System.out.println("You do not have any searches left ya lazy.");
       	    }
       }
+      else if (response.equals("eat")) {
+      	
+      }
+      else if (response.equals("use")) {
+      	
+      }
+      else if (response.equals("talk")) {
+      	
+      }
+      else {
+      	System.out.println("That is not a valid action.")
+      }
     }
   }
   
