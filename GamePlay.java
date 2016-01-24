@@ -280,9 +280,10 @@ public class GamePlay {
         String response = Keyboard.readString();	
   	for (Objects o : DT.getInv()) {
         	if (o instanceof Food && o.getType().equals(response)) {
-            		DT.setHun(o.getFillinglvl());
-            		DT.setHP(DT.getHp() + (double)(o.getFillinglvl() * 5.0));
-            		return;
+              Food f = (Food)o;
+            	DT.setHun(f.getFillinglvl());
+            	DT.setHP(DT.getHp() + (double)(f.getFillinglvl() * 5.0));
+            	return;
         	}
         	else {
             System.out.println("Don't eat that...that's not food."); 
