@@ -256,18 +256,48 @@ public class GamePlay {
       	    }
       }
       else if (response.equals("eat")) {
-      	
+      	eat();
       }
       else if (response.equals("use")) {
       	
       }
       else if (response.equals("talk")) {
-      	
+      	talk();
       }
       else {
       	System.out.println("That is not a valid action.")
       }
     }
+  }
+  
+  public static void eat(){
+  	System.out.println("Choose item to eat")
+  	System.out.println(DT.toStringInv());
+        String response = Keyboard.readString();	
+  	for (Objects o : DT.getInv()) {
+        	if (o instanceof Food && o.getType().equals(response)) {
+            		DT.setHun(o.getFillinglvl());
+            		DT.setHP(DT.getHp() + (double)(o.getFillinglvl() * 5.0));
+            		return;
+        	}
+        	else {System.out.println("Don't eat that...that's not food."); return;}
+        }
+        System.out.print(response + " is not in your inventory.");
+     }
+    System.out.println("There are no " + response + " around these parts");  
+  }
+  
+  public static void talk(){
+  	System.out.println("Choose entity to talk to:");
+  	String response = Keyboard.readString();
+  	for (Entities e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
+  		if (e.getName().equals(response) && e.isFriend? == true) {
+  			System.out.println(e.getInfo);
+  			return;
+  		}
+  		else {System.out.println("You can not talk to " + response + "."); return;}
+  	}
+  	else {System.out.println(response + " does not exist here.");}
   }
   
   public static void attack(){
@@ -276,7 +306,7 @@ public class GamePlay {
   	System.out.println(DT.toStringInv());
   	String response = Keyboard.readString();
   	for (Objects o : DT.getInv()) {
-        	if (o.getType().equals(response) && o instanceof Weapons) {
+        	if (o instanceof Weapons && o.getType().equals(response)) {
         		dam += ((double)(Math.random() * (((Weapons)o.getDMG() + 4) - ((Weapons)o.getDMG() - 4)) + ((Weapons)o.getDMG() - 4)));
         	}
         	else {
