@@ -42,7 +42,7 @@ public class AI implements Entities{
   }
   
    public void attack(User u) {
-    u.setHP(u.getHP() - ((double)(Math.random() * (((dmg + 4) - (dmg - 4)) + (dmg - 4)))));
+    u.setHP(u.getHP() - ((double)(Math.random() * ((dmg + 4) - (dmg - 4)) + (dmg - 4))));
   }
   
 }
