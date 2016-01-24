@@ -1,4 +1,6 @@
 //Items; subclass of Objects
+import java.util.ArrayList;
+
 public class Items implements Objects{
 
 	private String _type = "";
@@ -24,7 +26,6 @@ public class Items implements Objects{
    		return getType();
   }
   	public boolean isCompatible(Items I) {
-  		return if (Compatible.contains(I))
-  		}
+  		return Compatible.contains(I);
   	}
 }
