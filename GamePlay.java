@@ -282,7 +282,7 @@ public class GamePlay {
         	if (o instanceof Food && o.getType().equals(response)) {
               Food f = (Food)o;
             	DT.setHun(f.getFillinglvl());
-            	DT.setHP(DT.getHp() + (double)(f.getFillinglvl() * 5.0));
+            	DT.setHP(DT.getHP() + (double)(f.getFillinglvl() * 5.0));
             	return;
         	}
         	else {
@@ -297,9 +297,9 @@ public class GamePlay {
   public static void talk(){
   	System.out.println("Choose entity to talk to:");
   	String response = Keyboard.readString();
-  	for (Entities e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
+  	for (AI e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
   		if (e.getName().equals(response) && e.isFriend) {
-  			System.out.println(e.getInfo);
+  			System.out.println(e.getInfo());
   			return;
   		}
   		else {System.out.println("You can not talk to " + response + "."); return;}
@@ -314,14 +314,14 @@ public class GamePlay {
   	String response = Keyboard.readString();
   	for (Objects o : DT.getInv()) {
         	if (o instanceof Weapons && o.getType().equals(response)) {
-        		dam += ((double)(Math.random() * (((Weapons)o.getDMG() + 4) - ((Weapons)o.getDMG() - 4)) + ((Weapons)o.getDMG() - 4)));
+        		dam += ((double)(Math.random() * ((((Weapons)o).getDMG() + 4) - (((Weapons)o).getDMG() - 4)) + (((Weapons)o).getDMG() - 4)));
         	}
         	else {
         		System.out.println(response + " is not a weapon in your inventory.");
         	}
   	}
   	System.out.println(response + "is now equipped. Choose enemy to attack:");
-  	for (Entities e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
+  	for (AI e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
   		if (!e.getName().equals(response) || !e.isFriend) {
   			dam2 = (double)(Math.random() * ((e.getDMG() + 4) - (e.getDMG() - 4)) + (e.getDMG() - 4));
   			DT.attack(dam, e);
@@ -333,7 +333,7 @@ public class GamePlay {
         }
   			if (e.getHP() <= 0) {
           e.die(); 
-          dropAI(); 
+          dropAI(e); 
           map[DT.getXcoor()][DT.getYcoor()].DelEnt(e);
         }
   			return;
@@ -351,26 +351,26 @@ public class GamePlay {
 			if (map[DT.getXcoor()][DT.getYcoor()+1].getPass()) {
 				DT.setYcoor(DT.getYcoor()+1);
 			}
-			else {System.out.println(map[DT.getXcoor()][DT.getYcoor()+1].getDesc());}
+			else {System.out.println("Cant go.");}
 		}
 		else if (response.equals("south")) {
 			if (map[DT.getXcoor()][DT.getYcoor()-1].getPass()) {
 				DT.setYcoor(DT.getYcoor()-1);
 			}
-			else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
+			else {System.out.println("Cant go.");}
 		}	
 		
 		else if (response.equals("east")) {
 			if (map[DT.getXcoor()+1][DT.getYcoor()].getPass()) {
 				DT.setXcoor(DT.getXcoor()+1);
 			}
-			else {System.out.println(map[DT.getXcoor()+1][DT.getYcoor()].getDesc());}
+			else {System.out.println("Cant go.");}
 		}
 		else if (response.equals("west")) {
 			if (map[DT.getXcoor()-1][DT.getYcoor()].getPass()) {
 				DT.setXcoor(DT.getXcoor()-1);
 			}
-			else {System.out.println(map[DT.getXcoor()-1][DT.getYcoor()].getDesc());}
+			else {System.out.println("Cant go.");}
 		}
 		else {
 			System.out.println("That is not a cardinal direction.");
@@ -414,11 +414,11 @@ public class GamePlay {
   }
   
     //drop: drop item from inventory
-  public static void dropAI() {
-     for (Objects o : this.getInv()) {
+  public static void dropAI(AI a) {
+     for (Objects o : a.getInv()) {
         map[DT.getXcoor()][DT.getYcoor()].AddtoObj(o);
         }
-        System.out.println(this + "has been killed. Its items have been dropped.");
+        System.out.println(a + "has been killed. Its items have been dropped.");
   }
   
   public static void main(String [] args) {
