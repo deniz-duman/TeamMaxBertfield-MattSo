@@ -28,5 +28,9 @@ Devlog:
   
   ~1/23/16: Added attack to GamePlay.java, updated User, Objects, and Location, and wrote AI. (DD)
   
+  ~1/23/16: Fixed trouble with interfaces, added the drop, pick up, and inventory commands, added constructors and methods to             food, user, and weapons. (SeaBassChin)
+  
   ~1/24/16: Added eat and talk to GamePlay. Updated food, user, and AI. (DD)
+  
+  ~
   
