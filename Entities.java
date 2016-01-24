@@ -8,6 +8,6 @@ public interface Entities {
   double setHP(double newHealth); //should return old health
   double getDMG();
   double setDMG(double newDMG);
-  void attack(double damage, Entities ent);
+
   
 }
