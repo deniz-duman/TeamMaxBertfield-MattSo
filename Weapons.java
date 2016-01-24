@@ -8,20 +8,20 @@ public class Weapons implements Objects{
     	_type = type;
     	_desc = desc;
     	_dmg = dmg;
-  }
+  	}
 
 	public String getType() {
-    	return _type;
-  }
+    		return _type;
+  	}
   
   	public String getDesc() {
-    	return _desc;
-  }
+    		return _desc;
+  	}
    	public String ToString() {
    		return getType();
-  }
+  	}
 
   	public int getDMG() {
-  		return dmg;
+  		return _dmg;
   	}
 }
