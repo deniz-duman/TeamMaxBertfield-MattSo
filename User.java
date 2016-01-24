@@ -23,6 +23,8 @@ public class User implements Entities{
     hunger = 0;
     currlocation = new int[2];
     isAlive = true;
+    xcoor = 7;
+    ycoor = 4;
   }
   
   public int getHun() {
@@ -85,9 +87,7 @@ public class User implements Entities{
   }
   
   public void setLoc(int x, int y) {
-    currlocation[7] = x;
     xcoor = x;
-    currlocation[4] = y;
     ycoor = y;
   }
   
