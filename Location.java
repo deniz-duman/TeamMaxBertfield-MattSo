@@ -70,4 +70,21 @@ public class Location {
     _entities.remove(E);
     return E;
   }
+  
+  public String printEnt() {
+    retStr = " ";
+    for (Entities e: _entities) {
+      retStr += e.getName() + " ";
+    }
+    return retStr;
+  }
+  
+  public String printObj() {
+    retStr = " ";
+    for (Objectss o: _objects) {
+      retStr += o.getType() + " ";
+    }
+    return retStr;
+  }
+  
 }
