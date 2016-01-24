@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class GamePlay {
   public static Location[][] map = new Location[9][9];
   public static User DT = new User(); //makes user
-  public static searches = 3;
+  public static int searches = 3;
   //public static InputStreamReader isr;
   //public static BufferedReader in;
   
@@ -211,9 +211,11 @@ public class GamePlay {
         System.out.println("`Once you are on the battlefield, you will have to fend for yourself. \n"
         +"Some commands that might help; \n\n"
         +"attack - attacks specified enemy \n"
-        +"search - look around at your surroundings \n"
+        +"search - look around at your surroundings; you only can use it three times during the course of the game.\n"
         +"use - uses specified item on a target \n"
         +"move - go to desired location \n"
+        +"eat - eat food\n"
+        +"talk - talk\n"
         +"inventory - view inventory \n"
         +"pick up - pick up specified object\n"
         +"drop - drop item from inventory\n\n"
@@ -265,7 +267,7 @@ public class GamePlay {
       	talk();
       }
       else {
-      	System.out.println("That is not a valid action.")
+      	System.out.println("That is not a valid action.");
       }
     }
   }
@@ -273,7 +275,7 @@ public class GamePlay {
   public static void use(){}
   
   public static void eat(){
-  	System.out.println("Choose item to eat")
+  	System.out.println("Choose item to eat");
   	System.out.println(DT.toStringInv());
         String response = Keyboard.readString();	
   	for (Objects o : DT.getInv()) {
@@ -282,12 +284,14 @@ public class GamePlay {
             		DT.setHP(DT.getHp() + (double)(o.getFillinglvl() * 5.0));
             		return;
         	}
-        	else {System.out.println("Don't eat that...that's not food."); return;}
+        	else {
+            System.out.println("Don't eat that...that's not food."); 
+            return;
+          }
         }
         System.out.print(response + " is not in your inventory.");
-     }
-    System.out.println("There are no " + response + " around these parts");  
   }
+
   
   public static void talk(){
   	System.out.println("Choose entity to talk to:");
