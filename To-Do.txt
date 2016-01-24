@@ -10,13 +10,13 @@ To-Do List:
   
   5. Create LOcation.class (done)
   
-  6. Create interfaces (one done, estimated time: 1.5 hours)
+  6. Create interfaces (done)
   
-  7. Create abstract classes (estimated time: 2 hours)
+  7. Create abstract classes (canceled)
   
-  8. Create subclasses (one done, estimated time: 3 hours)
+  8. Create subclasses (done)
   
-  9. Create driver class (estimated time: 4-6 hours)
+  9. Create driver class (estimated time remaining: 2-4 hours)
   
   10. Test (estimated time: 20 minutes)
   
