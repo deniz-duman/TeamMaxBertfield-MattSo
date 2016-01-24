@@ -1,7 +1,7 @@
 //class AI; subclass of Entities.java
 public class AI implements Entities{
   private String name, desc;
-  private boolean isAlive? = true, isFriend?;
+  public boolean isAlive? = true, isFriend?;
   private double hp, dmg;
   private ArrayList<Objects> inventory = new ArrayList<Objects>();
   
