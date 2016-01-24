@@ -297,13 +297,13 @@ public class GamePlay {
   	System.out.println("Choose entity to talk to:");
   	String response = Keyboard.readString();
   	for (Entities e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
-  		if (e.getName().equals(response) && e.isFriend? == true) {
+  		if (e.getName().equals(response) && e.isFriend) {
   			System.out.println(e.getInfo);
   			return;
   		}
   		else {System.out.println("You can not talk to " + response + "."); return;}
   	}
-  	else {System.out.println(response + " does not exist here.");}
+  	System.out.println(response + " does not exist here.");
   }
   
   public static void attack(){
@@ -316,10 +316,10 @@ public class GamePlay {
         		dam += ((double)(Math.random() * (((Weapons)o.getDMG() + 4) - ((Weapons)o.getDMG() - 4)) + ((Weapons)o.getDMG() - 4)));
         	}
         	else {
-        		System.out.println(response + " is not a weapon in your inventory.")
+        		System.out.println(response + " is not a weapon in your inventory.");
         	}
   	}
-  	System.out.println(response + "is now equipped. Choose enemy to attack:")
+  	System.out.println(response + "is now equipped. Choose enemy to attack:");
   	for (Entities e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
   		if (e.getName().equals(response) && e.isFriend? == false) {
   			dam2 = (double)(Math.random() * ((e.getDMG() + 4) - (e.getDMG() - 4)) + (e.getDMG() - 4));
