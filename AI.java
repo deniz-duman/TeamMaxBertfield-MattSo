@@ -1,4 +1,6 @@
 //class AI; subclass of Entities.java
+import java.util.ArrayList;
+
 public class AI implements Entities{
   private String name, desc, info;
   public boolean isAlive = true, isFriend;
