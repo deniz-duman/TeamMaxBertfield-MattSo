@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class GamePlay {
   public static Location[][] map = new Location[9][9];
   public static User DT = new User(); //makes user
+  public static searches = 3;
   //public static InputStreamReader isr;
   //public static BufferedReader in;
   
@@ -241,8 +242,52 @@ public class GamePlay {
       else if (response.equals("pick up")) {
             pickup();
       }
+      else if (response.equals("attack")) {
+      	    attack();
+      }
+      else if (response.equals("search")) {
+      	    if (searches > 0) {
+      	    	System.out.println("Entities at this location:" + map[DT.getXcoor()][DT.getYcoor()].printEnt());
+      	    	System.out.println("Objects at this location:" + map[DT.getXcoor()][DT.getYcoor()].printObj());
+      	    	searches -= 1;
+      	    }
+      	    else {
+      	    	System.out.println("You do not have any searches left ya lazy.");
+      	    }
+      }
     }
   }
+  
+  public static void attack(){
+  	double dam = DT.getDMG(), dam2;
+  	System.out.println("Choose weapon to use:");
+  	System.out.println(DT.toStringInv());
+  	String response = Keyboard.readString();
+  	for (Objects o : DT.getInv()) {
+        	if (o.getType().equals(response) && o instanceof Weapons) {
+        		dam += ((double)(Math.random() * (((Weapons)o.getDMG() + 4) - ((Weapons)o.getDMG() - 4)) + ((Weapons)o.getDMG() - 4)));
+        	}
+        	else {
+        		System.out.println(response + " is not a weapon in your inventory.")
+        	}
+  	}
+  	System.out.println(response + "is now equipped. Choose enemy to attack:")
+  	for (Entities e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
+  		if (e.getName().equals(response) && e.isFriend? == false) {
+  			dam2 = (double)(Math.random() * ((e.getDMG() + 4) - (e.getDMG() - 4)) + (e.getDMG() - 4));
+  			DT.attack(dam, e);
+  			System.out.println(dam + " points of damage done to enemy.")
+  			e.attack(dam2, DT);
+  			System.out.println(dam2 + " points of damage taken.")
+  			if (DT.getHP() <= 0) {DT.isAlive = false;}
+  			if (e.getHP() <= 0) {e.isAlive? = false; dropAI(); map[DT.getXcoor()][DT.getYcoor()].remove(e)}
+  			return;
+  		}
+  		else {System.out.println(response + " is not an enemy."); return;}
+  	}
+  	else {System.out.println(response + " does not exist here.");}
+  }
+  
   //move: go in desired direction
   public static void move(){
 	System.out.println("Choose a cardinal direction:");
@@ -313,6 +358,13 @@ public class GamePlay {
     System.out.println("There are no " + response + " around these parts");  
   }
   
+    //drop: drop item from inventory
+  public static void dropAI(AI a) {
+     for (Objects o : a.getInv()) {
+        map[DT.getXcoor()][DT.getYcoor()].AddtoObj(o);
+        }
+        System.out.println(Enemy has been killed. Its items have been dropped.);
+  }
   
   public static void main(String [] args) {
     Run();
