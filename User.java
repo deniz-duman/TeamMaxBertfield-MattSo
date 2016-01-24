@@ -79,6 +79,10 @@ public class User implements Entities{
   public void attack(double damage, AI ai) {
     ai.setHP(ai.getHP() - damage);
   }
+
+  public void die() {
+    isAlive = false;
+  }
   
   public void setLoc(int x, int y) {
     currlocation[7] = x;
