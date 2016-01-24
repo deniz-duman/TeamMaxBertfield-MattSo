@@ -321,14 +321,20 @@ public class GamePlay {
   	}
   	System.out.println(response + "is now equipped. Choose enemy to attack:");
   	for (Entities e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
-  		if (e.getName().equals(response) && e.isFriend? == false) {
+  		if (!e.getName().equals(response) || !e.isFriend) {
   			dam2 = (double)(Math.random() * ((e.getDMG() + 4) - (e.getDMG() - 4)) + (e.getDMG() - 4));
   			DT.attack(dam, e);
-  			System.out.println(dam + " points of damage done to enemy.")
+  			System.out.println(dam + " points of damage done to " + response);
   			e.attack(dam2, DT);
-  			System.out.println(dam2 + " points of damage taken.")
-  			if (DT.getHP() <= 0) {DT.isAlive = false;}
-  			if (e.getHP() <= 0) {e.isAlive? = false; dropAI(); map[DT.getXcoor()][DT.getYcoor()].remove(e)}
+  			System.out.println(dam2 + " points of damage taken.");
+  			if (DT.getHP() <= 0) {
+          DT.isAlive = false;
+        }
+  			if (e.getHP() <= 0) {
+          e.isAlive? = false; 
+          dropAI(); 
+          map[DT.getXcoor()][DT.getYcoor()].remove(e)
+        }
   			return;
   		}
   		else {System.out.println(response + " is not an enemy."); return;}
