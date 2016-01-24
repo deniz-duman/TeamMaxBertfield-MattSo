@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Location {
   private String _name, _desc;
   private ArrayList<Objects> _objects = new ArrayList<Objects>();
-  private ArrayList<Entities> _entities = new ArrayList<Entities>();
+  private ArrayList<AI> _entities = new ArrayList<AI>();
   private boolean isPassable, isGoal;
   //=========================================Constructors and ToString===================================================\\
   public Location(){
@@ -39,7 +39,7 @@ public class Location {
     return _objects.set(i, O);
 
   }
-  public Entities setEnt(int i, Entities E) {
+  public Entities setEnt(int i, AI E) {
     return _entities.set(i, E);
   }
   //=========================================Accessors=================================================================\\
@@ -47,7 +47,7 @@ public class Location {
   public String getDesc()              {return _desc;}
   public ArrayList<Objects> getObjArr(){return _objects;}
   public Objects getObj(int i)         {return _objects.get(i);}
-  public ArrayList<Entities> getEntArr(){return _entities;}
+  public ArrayList<AI> getEntArr(){return _entities;}
   public Entities getEnt(int i)        {return _entities.get(i);}
   public boolean getPass()             {return isPassable;}
 
@@ -57,7 +57,7 @@ public class Location {
     _objects.add(O);
   }
   //Add to Entities ArrayList
-  public void AddtoEnt(Entities E) {
+  public void AddtoEnt(AI E) {
     _entities.add(E);
   }
   //Delete Object
@@ -66,22 +66,22 @@ public class Location {
     return O;
   }
   //Delete Entities
-  public Entities DelEnt(Entities E) {
+  public AI DelEnt(AI E) {
     _entities.remove(E);
     return E;
   }
   
   public String printEnt() {
-    retStr = " ";
-    for (Entities e: _entities) {
+    String retStr = " ";
+    for (AI e: _entities) {
       retStr += e.getName() + " ";
     }
     return retStr;
   }
   
   public String printObj() {
-    retStr = " ";
-    for (Objectss o: _objects) {
+    String retStr = " ";
+    for (Objects o: _objects) {
       retStr += o.getType() + " ";
     }
     return retStr;
