@@ -22,3 +22,11 @@ Devlog:
   
   ~1/19/16: Started main method of game play. Incorporated Keyboard.java. (SeaBassChin)
   
+  ~1/22/16: Got keyboard to work. (SeaBassChin and DD)
+  
+  ~1/22/16: Rewrote classes to better interact with each other. (DD)
+  
+  ~1/23/16: Added attack to GamePlay.java, updated User, Objects, and Location, and wrote AI. (DD)
+  
+  ~1/24/16: Added eat and talk to GamePlay. Updated food, user, and AI. (DD)
+  
