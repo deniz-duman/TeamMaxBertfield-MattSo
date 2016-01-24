@@ -8,7 +8,7 @@ public class User implements Entities{
   private String desc = "";
   public boolean isAlive = true;
   private int ammo;
-  private double hunger;
+  private int hunger;
   private int[] currlocation;
   private int xcoor, ycoor;
   private ArrayList<Objects> inventory = new ArrayList<Objects>();
@@ -25,6 +25,13 @@ public class User implements Entities{
     isAlive = true;
   }
   
+  public int getHun() {
+    return hunger;
+  }
+  
+  public void setHun(int hun){
+    hunger += hun;
+  }
   public String getName() {
       return name;
   }
