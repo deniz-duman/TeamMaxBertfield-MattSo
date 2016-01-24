@@ -328,18 +328,18 @@ public class GamePlay {
   			e.attack(dam2, DT);
   			System.out.println(dam2 + " points of damage taken.");
   			if (DT.getHP() <= 0) {
-          DT.isAlive = false;
+          DT.die();
         }
   			if (e.getHP() <= 0) {
-          e.isAlive? = false; 
+          e.die(); 
           dropAI(); 
-          map[DT.getXcoor()][DT.getYcoor()].remove(e)
+          map[DT.getXcoor()][DT.getYcoor()].DelEnt(e);
         }
   			return;
   		}
   		else {System.out.println(response + " is not an enemy."); return;}
   	}
-  	else {System.out.println(response + " does not exist here.");}
+  	System.out.println(response + " does not exist here.");
   }
   
   //move: go in desired direction
@@ -413,11 +413,11 @@ public class GamePlay {
   }
   
     //drop: drop item from inventory
-  public static void dropAI(AI a) {
-     for (Objects o : a.getInv()) {
+  public static void dropAI() {
+     for (Objects o : this.getInv()) {
         map[DT.getXcoor()][DT.getYcoor()].AddtoObj(o);
         }
-        System.out.println(Enemy has been killed. Its items have been dropped.);
+        System.out.println(this + "has been killed. Its items have been dropped.");
   }
   
   public static void main(String [] args) {
