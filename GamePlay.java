@@ -270,6 +270,8 @@ public class GamePlay {
     }
   }
   
+  public static void use(){}
+  
   public static void eat(){
   	System.out.println("Choose item to eat")
   	System.out.println(DT.toStringInv());
