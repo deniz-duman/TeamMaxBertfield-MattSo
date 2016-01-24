@@ -1,7 +1,7 @@
 //class AI; subclass of Entities.java
 public class AI implements Entities{
   private String name, desc, info;
-  public boolean isAlive? = true, isFriend;
+  public boolean isAlive = true, isFriend;
   private double hp, dmg;
   private ArrayList<Objects> inventory = new ArrayList<Objects>();
   
@@ -53,6 +53,10 @@ public class AI implements Entities{
   
    public void attack(double dam, User u) {
     u.setHP(u.getHP() - dam);
+  }
+
+  public void die() {
+    isAlive = false;
   }
   
 }
