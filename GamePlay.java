@@ -1,11 +1,25 @@
 //Driver Class
 import java.util.ArrayList;
-public class GamePlay {
-  public static Location[][] map = new Location[9][9];
-  public static User DT = new User(); //makes user
-  public static int searches = 5;
-  //public static InputStreamReader isr;
-  //public static BufferedReader in;
+  public class GamePlay {
+    public static Location[][] map = new Location[9][9];
+    public static User DT = new User(); //makes user
+    public static Items nothing = new Items("nothing", "nothing", false);
+    public static Items ladder = new Items("ladder", "tall ladder", true);
+    public static Items box = new Items("box", "a box", false);
+    public static Items fire = new Items("fire", "fire for cooking", false);
+    public static Items fire2 = new Items("box", "fire for cooking", false);
+    public static Items oak = new Items("oak", "oak tree", false);
+    public static Items tree = new Items("tree", "tree with parachute", false);
+    public static Items parachute = new Items("parachute", "a parachute", false);
+    public static Items shinycoin = new Items("shiny coin", "shiny coin", true);
+    public static Items knife = new Items("knife", "a sharp knife", true);
+    public static Items rawvenison = new Items("rawvenison", "raw meat", true);
+    public static Items rawvenison2 = new Items("rawvenison", "raw meat", true);
+    public static Items cliff = new Items("Cliff", "Steep cliff; at the bottom is freedom", false);
+    public static Items rope = new Items("Rope", "Cut from the parachute", true);
+    public static int searches = 5;
+    //public static InputStreamReader isr;
+    //public static BufferedReader in;
   
   public static void Run() {
     CreateWorld();
@@ -197,48 +211,46 @@ public class GamePlay {
     map[7][8] = IH;
     map[8][8] = II;
     
-    AI ncb = new AI("ncb", "A crazy bear with a chainsaw", false, 100 20, chainsaw, "");
-    AI survivor = new AI("survivor", "A survivor", true, 100, 100, void, "As the Nazi's were attacking, our commander escaped to the shore and escaped on a boat. He left a boat for any survivors. The boat is on the pier to the West, down the cliffs.");
-    AI hermit = new AI("hermit", "A lonely hermit who lives in a cave", true, 100, 100, void, "INEEEDSMAHSHINEEYYCOINSSESISEESNAHTZIWITITGOTOTOWNANDGETMICOINNNNNPUTINBOXANDIHASPRESENTFORYOUSE");
+
+    AI ncb = new AI("ncb", "A crazy bear with a chainsaw", false, 100, 20, chainsaw, "");
+    AI survivor = new AI("survivor", "A survivor", true, 100, 100, nothing, "As the Nazi's were attacking, our commander escaped to the shore and escaped on a boat. He left a boat for any survivors. The boat is on the pier to the West, down the cliffs.");
+    AI hermit = new AI("hermit", "A lonely hermit who lives in a cave", true, 100, 100, nothing, "INEEEDSMAHSHINEEYYCOINSSESISEESNAHTZIWITITGOTOTOWNANDGETMICOINNNNNPUTINBOXANDIHASPRESENTFORYOUSE");
     AI deer = new AI("deer", "deer is alone in the forest", false, 20, 0, rawvenison, "");
     AI deer2 = new AI("deer", "deer is alone in the forest", false, 20, 0, rawvenison2, "");
     AI patrol = new AI("patrol", "He has a machine gun", false, 50, 10, machinegun, "");
     AI sniper = new AI("sniper", "Sniper dude", false, 40, 15, sniper, "");
-    AI ranger = new AI("Ranger", "Ally looking to help", true, 100, 100, void, "");
+    AI ranger = new AI("Ranger", "Ally looking to help", true, 100, 100, nothing, "After you get food, you should go North, there is a hermit who knows these lands. Be careful though, there is a sniper.");
     AI nazi1 = new AI("nazi", "Nazi with rifle", false, 30, 10, rifle, "");
     AI nazi2 = new AI("nazi", "Nazi with pistol", false, 30, 5, pistol2, "");
     AI nazi3 = new AI("nazi", "Nazi with pistol", false, 30, 5, pistol3, "");
     AI guard = new AI("guard", "Nazi guarding the base", false, 50, 5, pistol4, "");
     AI naziwithcoin = new AI("nazi", "Nazi soldier", false, 30, 10, shinycoin, "");
-    AI prisoner = new AI("prisoner", "prisoner", true, 100, 100, void, "There was an American camp to the north along the road. But I heard the Nazi's were snding a patrol there to check it out. You should get there asap. Also you might wanna check the camp.");
-    AI baker = new AI("baker", "a sad baker", true, 100, 100, void, "There is no food here but there is a hunting ground to the North in the forest. Watch out for Nazi's.")
+    AI prisoner = new AI("prisoner", "prisoner", true, 100, 100, nothing, "There was an American camp to the north along the road. But I heard the Nazi's were snding a patrol there to check it out. You should get there asap. Also you might wanna check the camp.");
+    AI baker = new AI("baker", "a sad baker", true, 100, 100, nothing, "There is no food here but there is a hunting ground to the North in the forest. Watch out for Nazi's.");
     
-    Items ladder = new Items("ladder", "tall ladder", void, true);
-    Items box = new Items("box", "a box", void, false);
-    Items fire = new Items("fire", "fire for cooking", void, false);
-    Items fire2 = new Items("box", "fire for cooking", void, false);
-    Items oak = new Items("oak", "oak tree", void, false);
-    Items tree = new Items("tree", "tree with parachute", void, false);
-    Items parachute = new Items("parachute", "a parachute", void, false);
-    Items coin = new Items("coin", "shiny coin", void, true);
-    Items knife = new Items("knife", "a sharp knife", void, true);
-    Items rawvenison = new Items("rawvenison", "raw meat", void, true);
-    Items rawvenison2 = new Items("rawvenison", "raw meat", void, true);
+
+    box.addComp(shinycoin);
+    oak.addComp(axe);
+    tree.addComp(ladder);
+    parachute.addComp(knife);
+    cliff.addComp(rope);
+    rawvenison.addComp(fire);
+
     
     Food venison = new Food("venison", "yummy meat", 10);
     Food venison2 = new Food("venison", "yummy meat", 10);
     Food mre = new Food("meals ready to eat", "soo filling", 20);
     
     Weapons machinegun = new Weapons("mg", "deadly weapon", 15);
-    Weapons chainsaw = new Weapons("chainsaw", "deadly weapon", 30)
-    Weapons rpg = new Weapons("rpg", "deadly weapon", 50)
-    Weapons sniper = new Weapons("sniper", "deadly weapon", 20)
-    Weapons rifle = new Weapons("rifle", "deadly weapon", 15)
-    Weapons smg = new Weapons("smg", "deadly weapon", 10)
-    Weapons pistol = new Weapons("pistol", "deadly weapon", 5)
-    Weapons pistol2 = new Weapons("pistol", "deadly weapon", 5)
-    Weapons pistol3 = new Weapons("pistol", "deadly weapon", 5)
-    Weapons pistol4 = new Weapons("pistol", "deadly weapon", 5)
+    Weapons chainsaw = new Weapons("chainsaw", "deadly weapon", 30);
+    Weapons rpg = new Weapons("rpg", "deadly weapon", 50);
+    Weapons sniper = new Weapons("sniper", "deadly weapon", 20);
+    Weapons rifle = new Weapons("rifle", "deadly weapon", 15);
+    Weapons smg = new Weapons("smg", "deadly weapon", 10);
+    Weapons pistol = new Weapons("pistol", "deadly weapon", 5);
+    Weapons pistol2 = new Weapons("pistol", "deadly weapon", 5);
+    Weapons pistol3 = new Weapons("pistol", "deadly weapon", 5);
+    Weapons pistol4 = new Weapons("pistol", "deadly weapon", 5);
     
     BC.AddtoObj(ladder);
     BF.AddtoObj(rpg);
@@ -360,7 +372,7 @@ public class GamePlay {
     }
     if (DT.getHun() <= 0) {System.out.println("You have died. You have failed the US Army.");}
     else {
-      System.out.println("You Win! Here's the map: \n" + mapper())
+      System.out.println("You Win! Here's the map: \n" + mapper());
     }
   }
   
@@ -418,14 +430,14 @@ public class GamePlay {
               if (o.getType().equals("shiny coin") && i.getType().equals("box")) {
                 shinycoinbox();
               }
-              if (o.getType().equals("axe") && i.getType().equals("big tree")) {
-                axebigtree();
+              if (o.getType().equals("axe") && i.getType().equals("oak")) {
+                axeoak();
               }
               if (o.getType().equals("ladder") && i.getType().equals("tree")) {
                 laddertree();
               }
               if (o.getType().equals("knife") && i.getType().equals("parachute")) {
-                axebigtree();
+                axeoak();
               }
               if (o.getType().equals("rope") && i.getType().equals("cliff")) {
                 ropecliff();
@@ -451,11 +463,11 @@ public class GamePlay {
     System.out.println("You put the shiny coin in the box. In return, the hermit rewards  you with an axe. \nHe tells you to go to chop down the tall tree near the river and use it to get to the other side.");
   }
 
-  public static void axebigtree() {
+  public static void axeoak() {
     map[4][5].setPass(true);
     System.out.println("You chop down the tree, which falls across the river, allowing you to cross it.");
-    map[4][5].setDesc("The fallen big tree has created a path across the rushing river; be careful, don't fall in.");
-    map[4][5].DelObj(bigtree);
+    map[4][5].setDesc("The fallen oak has created a path across the rushing river; be careful, don't fall in.");
+    map[4][5].DelObj(oak);
   }
 
   public static void laddertree() {
