@@ -16,14 +16,14 @@ To-Do List:
   
   8. Create subclasses (done)
   
-  9. Create driver class (estimated time remaining: 2-4 hours)
+  9. Create driver class (done)
   
-  10. Test (estimated time: 20 minutes)
+  10. Test (done)
   
-  11. Debug (estimated time: 0-4 hours)
+  11. Debug (done)
   
-  12. Test (estimated time: 20 minutes)
+  12. Test (done)
   
-  13. Final debug (estimated time: 0-4 hours)
+  13. Final debug (done)
   
-  14. Final details (estimated time: 1 hour)
+  14. Final details (done)
