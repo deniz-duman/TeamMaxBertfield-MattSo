@@ -20,7 +20,7 @@ public class User implements Entities{
     isAlive = true;
     hp = 100.0;
     dmg = 10.0;
-    hunger = 0;
+    hunger = 20;
     currlocation = new int[2];
     isAlive = true;
     xcoor = 7;
