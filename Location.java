@@ -50,6 +50,7 @@ public class Location {
   public ArrayList<AI> getEntArr(){return _entities;}
   public Entities getEnt(int i)        {return _entities.get(i);}
   public boolean getPass()             {return isPassable;}
+  public boolean getGoal()             {return isGoal;}
 
   //========================================Methods===================================================================\\
   //Add to Objects ArrayList
