@@ -301,6 +301,8 @@ public class GamePlay {
   public static void play() { //play method to dictate gameplay
     while (DT.isAlive) {
       System.out.println(map[DT.getXcoor()][DT.getYcoor()]);
+      System.out.println("HP: " + DT.getHP());
+      System.out.println("Hunger: " + DT.getHun());
       System.out.println("Choose something to do:");
       String response = Keyboard.readString();
       if (response.equals("move")) {
@@ -336,6 +338,20 @@ public class GamePlay {
       }
       else if (response.equals("talk")) {
         talk();
+      }
+      else if (response.equals("help")) {
+        System.out.println("`Once you are on the battlefield, you will have to fend for yourself. \n"
+        +"Some commands that might help; \n\n"
+        +"attack - attacks specified enemy \n"
+        +"search - look around at your surroundings; you only can use it three times during the course of the game.\n"
+        +"use - uses specified item on a target \n"
+        +"move - go to desired location \n"
+        +"eat - eat food\n"
+        +"talk - talk\n"
+        +"inventory - view inventory \n"
+        +"pick up - pick up specified object\n"
+        +"drop - drop item from inventory\n\n"
+        +"Use these commands for your advantage. Good luck.");
       }
       else {
         System.out.println("That is not a valid action.");
@@ -533,27 +549,31 @@ public class GamePlay {
     if (response.equals("north")) {
       if (map[DT.getXcoor()][DT.getYcoor()+1].getPass()) {
         DT.setYcoor(DT.getYcoor()+1);
+        DT.setHun(-1);
       }
-      else {System.out.println("Cant go.");}
+      else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
     }
     else if (response.equals("south")) {
       if (map[DT.getXcoor()][DT.getYcoor()-1].getPass()) {
         DT.setYcoor(DT.getYcoor()-1);
+        DT.setHun(-1);
       }
-      else {System.out.println("Cant go.");}
+      else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
     } 
     
     else if (response.equals("east")) {
       if (map[DT.getXcoor()+1][DT.getYcoor()].getPass()) {
         DT.setXcoor(DT.getXcoor()+1);
+        DT.setHun(-1);
       }
-      else {System.out.println("Cant go.");}
+      else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
     }
     else if (response.equals("west")) {
       if (map[DT.getXcoor()-1][DT.getYcoor()].getPass()) {
         DT.setXcoor(DT.getXcoor()-1);
+        DT.setHun(-1);
       }
-      else {System.out.println("Cant go.");}
+      else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
     }
     else {
       System.out.println("That is not a cardinal direction.");
