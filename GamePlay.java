@@ -299,7 +299,7 @@ public class GamePlay {
   }
   
   public static void play() { //play method to dictate gameplay
-    while (DT.isAlive) {
+    while (DT.isAlive && !map[DT.getXcoor()][DT.getYcoor()].getGoal()) {
       System.out.println(map[DT.getXcoor()][DT.getYcoor()]);
       System.out.println("HP: " + DT.getHP());
       System.out.println("Hunger: " + DT.getHun());
@@ -356,6 +356,11 @@ public class GamePlay {
       else {
         System.out.println("That is not a valid action.");
       }
+      if (DT.getHun() <= 0) {DT.die();}
+    }
+    if (DT.getHun() <= 0) {System.out.println("You have died. You have failed the US Army.");}
+    else {
+      System.out.println("You Win! Here's the map: \n" + mapper())
     }
   }
   
@@ -622,6 +627,14 @@ public class GamePlay {
         map[DT.getXcoor()][DT.getYcoor()].AddtoObj(o);
         }
         System.out.println(a + "has been killed. Its items have been dropped.");
+  }
+  
+  public static String mapper(){
+    String retstr = "";
+    for (Location l: map) {
+      retstr += l.getName() + "\t";
+    }
+    return retstr;
   }
   
   public static void main(String [] args) {
