@@ -16,17 +16,17 @@ public class GamePlay {
   public static void CreateWorld() {
     //hardcodes each location on the map
     //Row 0
-    Location AA = new Location ("Sea", "Nothing but ocean",false, false);
-    Location AB = new Location ("Sea", "Nothing but ocean",false, false);
-    Location AC = new Location ("Sea", "Nothing but ocean",false, false);
-    Location AD = new Location ("Sea",  "Nothing but ocean",false, false);
-    Location AE = new Location ("Sea",  "Nothing but ocean",false, false);
-    Location AF = new Location ("Sea",  "Nothing but ocean",false, false);
-    Location AG = new Location ("Sea",  "Nothing but ocean",false, false);
-    Location AH = new Location ("Sea",  "Nothing but ocean",false, false);
-    Location AI = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location AA = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.",false, false);
+    Location AB = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.",false, false);
+    Location AC = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.",false, false);
+    Location AD = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.",false, false);
+    Location AE = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.",false, false);
+    Location AF = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.",false, false);
+    Location AG = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.",false, false);
+    Location AH = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.",false, false);
+    Location AI = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.",false, false);
     //Row 1
-    Location BA = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BA = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.",false, false);
     Location BB = new Location ("Sea",  "Nothing but ocean",false, false);
     Location BC = new Location ("Sea",  "Nothing but ocean",false, false);
     Location BD = new Location ("Sea",  "Nothing but ocean",false, false);
@@ -34,9 +34,9 @@ public class GamePlay {
     Location BF = new Location ("Sea",  "Nothing but ocean",false, false);
     Location BG = new Location ("Sea",  "Nothing but ocean",false, false);
     Location BH = new Location ("Sea",  "Nothing but ocean",false, false);
-    Location BI = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location BI = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.",false, false);
     //Row 2
-    Location CA = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location CA = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.",false, false);
     Location CB = new Location ("Sea",  "Nothing but ocean",false, false);
     Location CC = new Location ("Sea",  "Nothing but ocean",false, false);
     Location CD = new Location ("Sea",  "Nothing but ocean", false, false);
@@ -44,9 +44,9 @@ public class GamePlay {
     Location CF = new Location ("Sea",  "Nothing but ocean",false, false);
     Location CG = new Location ("Sea",  "Nothing but ocean",false, false);
     Location CH = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location CI = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location CI = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.", false, false);
     //Row 
-    Location DA = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DA = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.", false, false);
     Location DB = new Location ("Sea",  "Nothing but ocean", false, false);
     Location DC = new Location ("Sea",  "Nothing but ocean", false, false);
     Location DD = new Location ("Sea",  "Nothing but ocean", false, false);
@@ -54,9 +54,9 @@ public class GamePlay {
     Location DF = new Location ("Sea",  "Nothing but ocean", false, false);
     Location DG = new Location ("Sea",  "Nothing but ocean", false, false);
     Location DH = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location DI = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location DI = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.", false, false);
     //Row 4
-    Location EA = new Location ("Sea",  "Nothing but ocean",false, false);
+    Location EA = new Location ("Home Base", "After days of wandering and hardships, you finally arrive at your squadron camp. YOU WIN!",true, true);
     Location EB = new Location ("Sea",  "Nothing but ocean", false, false);
     Location EC = new Location ("Sea",  "Nothing but ocean", false, false);
     Location ED = new Location ("Sea",  "Nothing but ocean", false, false);
@@ -64,9 +64,9 @@ public class GamePlay {
     Location EF = new Location ("Sea",  "Nothing but ocean",false, false);
     Location EG = new Location ("Sea",  "Nothing but ocean", false, false);
     Location EH = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location EI = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location EI = new Location ("Thick Forest",  "You probably shouldn't go in the forest, there are probably bears, or witches *shudders*.", false, false);
     //Row 5
-    Location FA = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FA = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.", false, false);
     Location FB = new Location ("Sea",  "Nothing but ocean", false, false);
     Location FC = new Location ("Sea",  "Nothing but ocean", false, false);
     Location FD = new Location ("Sea",  "Nothing but ocean", false, false);
@@ -74,9 +74,9 @@ public class GamePlay {
     Location FF = new Location ("Sea",  "Nothing but ocean", false, false);
     Location FG = new Location ("Sea",  "Nothing but ocean", false, false);
     Location FH = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location FI = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location FI = new Location ("Thick Forest",  "You probably shouldn't go in the forest, there are probably bears, or witches *shudders*.", false, false);
     //Row 6
-    Location GA = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location GA = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.", false, false);
     Location GB = new Location ("Sea",  "Nothing but ocean", false, false);
     Location GC = new Location ("Sea",  "Nothing but ocean", false, false);
     Location GD = new Location ("Sea",  "Nothing but ocean", false, false);
@@ -84,9 +84,9 @@ public class GamePlay {
     Location GF = new Location ("Sea",  "Nothing but ocean", false, false);
     Location GG = new Location ("Sea",  "Nothing but ocean",false, false);
     Location GH = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location GI = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location GI = new Location ("Thick Forest",  "You probably shouldn't go in the forest, there are probably bears, or witches *shudders*.", false, false);
     //Row 7
-    Location HA = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location HA = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.", false, false);
     Location HB = new Location ("Sea",  "Nothing but ocean", false, false);
     Location HC = new Location ("Sea",  "Nothing but ocean", false, false);
     Location HD = new Location ("Field",  "Just a field.", true, false);
@@ -94,17 +94,17 @@ public class GamePlay {
     Location HF = new Location ("Field",  "Just a field.", true, false);
     Location HG = new Location ("Sea",  "Nothing but ocean", false, false);
     Location HH = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location HI = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location HI = new Location ("Thick Forest",  "You probably shouldn't go in the forest, there are probably bears, or witches *shudders*.", false, false);
     //Row 8
-    Location IA = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location IB = new Location ("Sea",  "Nothing but ocean",false, false);
-    Location IC = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location ID = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location IE = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location IF = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location IG = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location IH = new Location ("Sea",  "Nothing but ocean", false, false);
-    Location II = new Location ("Sea",  "Nothing but ocean", false, false);
+    Location IA = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.", false, false);
+    Location IB = new Location ("Mountain",  "If you try to climb the mountain, you will probably starve or freeze or both. Go somewhere else.",false, false);
+    Location IC = new Location ("Mountain",  "If you try to climb the mountain, you will probably starve or freeze or both. Go somewhere else.", false, false);
+    Location ID = new Location ("Mountain",  "If you try to climb the mountain, you will probably starve or freeze or both. Go somewhere else.", false, false);
+    Location IE = new Location ("Mountain",  "If you try to climb the mountain, you will probably starve or freeze or both. Go somewhere else.", false, false);
+    Location IF = new Location ("Mountain",  "If you try to climb the mountain, you will probably starve or freeze or both. Go somewhere else.", false, false);
+    Location IG = new Location ("Mountain",  "If you try to climb the mountain, you will probably starve or freeze or both. Go somewhere else.", false, false);
+    Location IH = new Location ("Thick Forest",  "You probably shouldn't go in the forest, there are probably bears, or witches *shudders*.", false, false);
+    Location II = new Location ("Thick Forest",  "You probably shouldn't go in the forest, there are probably bears, or witches *shudders*.", false, false);
     
     //Assign each Location to a position on map
     map[0][0] = AA;
