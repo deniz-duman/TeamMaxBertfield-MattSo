@@ -6,8 +6,9 @@ public class Items implements Objects{
   private String _type = "";
     private String _desc = "";
     private ArrayList<Objects> Compatible = new ArrayList<Objects>();
-    public Items(String type, String desc, Items I){
-    
+    private boolean take?;
+    public Items(String type, String desc, Items I, boolean take){
+        take? = take;
         _type = type;
         _desc = desc;
       Compatible.add(I);  
@@ -18,6 +19,14 @@ public class Items implements Objects{
 
   public void setType(String newType) {
     _type = newType;
+  }
+  
+  public boolean getTake?() {
+    return take?;
+  }
+  
+  public void setTake?(boolean t) {
+    take? = t;
   }
   
     public String getDesc() {
