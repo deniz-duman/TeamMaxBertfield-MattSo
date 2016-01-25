@@ -320,8 +320,23 @@ public class GamePlay {
             if (i.isCompatible((Items)o)) {
               System.out.println("You used " + response + " on " + response2);
               //calling specific consequence methods:
-              if (o.getType().equals("hatchet") && i.getType().equals("parachute")) {
-                hatchetparachute();
+              if (o.getType().equals("fire") && i.getType().equals("raw venison")) {
+                firerawvenison();
+              }
+              if (o.getType().equals("shiny coin") && i.getType().equals("box")) {
+                shinycoinbox();
+              }
+              if (o.getType().equals("axe") && i.getType().equals("big tree")) {
+                axebigtree();
+              }
+              if (o.getType().equals("ladder") && i.getType().equals("tree")) {
+                laddertree();
+              }
+              if (o.getType().equals("knife") && i.getType().equals("parachute")) {
+                axebigtree();
+              }
+              if (o.getType().equals("rope") && i.getType().equals("cliff")) {
+                ropecliff();
               }
             }
           }
@@ -330,9 +345,46 @@ public class GamePlay {
     }
   }
 
-  public static void hatchetparachute() {
 
+
+  public static void firerawvenison() {
+    DT.delInv(rawvenison);
+    DT.addInv(venison);
+    System.out.println("You cooked the venison, you can safely eat it now.");
   }
+
+  public static void shinycoinbox() {
+    DT.delInv(shinycoin);
+    DT.addInv(axe);
+    System.out.println("You put the shiny coin in the box. In return, the hermit rewards  you with an axe. \nHe tells you to go to chop down the tall tree near the river and use it to get to the other side.");
+  }
+
+  public static void axebigtree() {
+    map[4][5].setPass(true);
+    System.out.println("You chop down the tree, which falls across the river, allowing you to cross it.");
+    map[4][5].setDesc("The fallen big tree has created a path across the rushing river; be careful, don't fall in.");
+    map[4][5].DelObj(bigtree);
+  }
+
+  public static void laddertree() {
+    DT.delInv(ladder);
+    DT.addInv(parachute);
+    map[4][7].setDesc("This is where you crashed.");
+    System.out.println("You climbed up the ladder to get the parachute. Its torn, but some parts can come in really handy.");
+  }
+
+  public static void knifeparachute() {
+    DT.delInv(parachute);
+    DT.addInv(rope);
+    System.out.println("You use the knife to get the rope from the parachute. You now have what you need to get down the cliff.");
+  }
+
+  public static void ropecliff() {
+    DT.delInv(rope);
+    map[4][2].setPass(true);
+    System.out.println("You use the rope to rappel down the cliff. You have reached the beach. In the east is the pier. You are so close to safety.");
+  }
+  
   public static void eat(){
     System.out.println("Choose item to eat");
     System.out.println(DT.toStringInv());
