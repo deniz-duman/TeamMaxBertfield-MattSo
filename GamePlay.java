@@ -197,6 +197,23 @@ public class GamePlay {
     map[7][8] = IH;
     map[8][8] = II;
     
+    AI nazichainsawbear = new AI("Nazi Chainsaw Bear", "A crazy bear with a chainsaw", false, <>, <>, chainsaw, "");
+    AI survivor = new AI("Survivor", "A survivor", true, <>, <>, void, "");
+    AI hermit = new AI("Hermit", "A lonely hermit who lives in a cave", true, <>, <>, box, "");
+    AI deer = new AI("deer", "deer is alone in the forest", true, <>, <>, rawvenison, "");
+    AI patrol = new AI("Nazi Patrol Man", "He has a machine gun", false, <>, <>, machinegun, "");
+    AI sniper = new AI("Nazi Sniper", "Sniper dude", false, <>, <>, sniper, "");
+    AI ranger = new AI("Ranger", "Ally looking to help", true, <>, <>, void, "");
+    AI nazi1 = new AI("Nazi trooper", "Nazi with rifle", false, <>, <>, rifle, "");
+    AI nazi2 = new AI("Nazi tooper", "Nazi with pistol", false, <>, <>, pistol, "");
+    AI guard = new AI("Nazi Guard", "Nazi guarding the base", false, <>, <>, pistol, "");
+    AI naziwithcoin = new AI("Nazi Soldier", "Nazi soldier", false, <>, <>, shinycoin, "");
+    AI prisoner = new AI("prisoner", "prisoner", true, <>, <, void, "");
+
+    Items ladder = new Items("ladder", "tall ladder", void);
+    Weapons machinegun = new Weapons("machine gun", "deadly weapon", <>)
+
+    BC
   }
 
   public static void Intro() { //Intro Screen; Gives user choice of playing or seeing help menu
