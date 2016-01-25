@@ -62,7 +62,7 @@ public class GamePlay {
     Location ED = new Location ("Cliffside",  "You arrive at the cliffside. There is a rock you could probably use to grapple down...if you had rope. There is also a nazi here...probably should do something about that.", true, false);
     Location EE = new Location ("Riveside",  "You are on the other side of the river, there is a road going north-south. There is also a fire you could use to cook here. There is a nazi camp to the South.",true, false);
     Location EF = new Location ("River",  "This river is moving awefully fast...but there seems to be a tree you can cut down to pass.",false, false);
-    Location EG = new Location ("Forest",  "You are in a dark forest. There is a giant tree here. You also see a nazi.", true, false);
+    Location EG = new Location ("Forest",  "You are in a dark forest. There is an oak here. You also see a nazi.", true, false);
     Location EH = new Location ("Field",  "You land in a big open field, in the distance you hear gunshots. You check your pack and you seem to have lost your weapons. To the north you see an outpost.", true, false);
     Location EI = new Location ("Thick Forest",  "You probably shouldn't go in the forest, there are probably bears, or witches *shudders*.", false, false);
     //Row 5
@@ -197,23 +197,77 @@ public class GamePlay {
     map[7][8] = IH;
     map[8][8] = II;
     
-    AI nazichainsawbear = new AI("Nazi Chainsaw Bear", "A crazy bear with a chainsaw", false, <>, <>, chainsaw, "");
-    AI survivor = new AI("Survivor", "A survivor", true, <>, <>, void, "");
-    AI hermit = new AI("Hermit", "A lonely hermit who lives in a cave", true, <>, <>, box, "");
-    AI deer = new AI("deer", "deer is alone in the forest", true, <>, <>, rawvenison, "");
-    AI patrol = new AI("Nazi Patrol Man", "He has a machine gun", false, <>, <>, machinegun, "");
-    AI sniper = new AI("Nazi Sniper", "Sniper dude", false, <>, <>, sniper, "");
-    AI ranger = new AI("Ranger", "Ally looking to help", true, <>, <>, void, "");
-    AI nazi1 = new AI("Nazi trooper", "Nazi with rifle", false, <>, <>, rifle, "");
-    AI nazi2 = new AI("Nazi tooper", "Nazi with pistol", false, <>, <>, pistol, "");
-    AI guard = new AI("Nazi Guard", "Nazi guarding the base", false, <>, <>, pistol, "");
-    AI naziwithcoin = new AI("Nazi Soldier", "Nazi soldier", false, <>, <>, shinycoin, "");
-    AI prisoner = new AI("prisoner", "prisoner", true, <>, <, void, "");
-
-    Items ladder = new Items("ladder", "tall ladder", void);
-    Weapons machinegun = new Weapons("machine gun", "deadly weapon", <>)
-
-    BC
+    AI ncb = new AI("ncb", "A crazy bear with a chainsaw", false, 100 20, chainsaw, "");
+    AI survivor = new AI("survivor", "A survivor", true, 100, 100, void, "As the Nazi's were attacking, our commander escaped to the shore and escaped on a boat. He left a boat for any survivors. The boat is on the pier to the West, down the cliffs.");
+    AI hermit = new AI("hermit", "A lonely hermit who lives in a cave", true, 100, 100, void, "INEEEDSMAHSHINEEYYCOINSSESISEESNAHTZIWITITGOTOTOWNANDGETMICOINNNNNPUTINBOXANDIHASPRESENTFORYOUSE");
+    AI deer = new AI("deer", "deer is alone in the forest", false, 20, 0, rawvenison, "");
+    AI deer2 = new AI("deer", "deer is alone in the forest", false, 20, 0, rawvenison2, "");
+    AI patrol = new AI("patrol", "He has a machine gun", false, 50, 10, machinegun, "");
+    AI sniper = new AI("sniper", "Sniper dude", false, 40, 15, sniper, "");
+    AI ranger = new AI("Ranger", "Ally looking to help", true, 100, 100, void, "");
+    AI nazi1 = new AI("nazi", "Nazi with rifle", false, 30, 10, rifle, "");
+    AI nazi2 = new AI("nazi", "Nazi with pistol", false, 30, 5, pistol2, "");
+    AI nazi3 = new AI("nazi", "Nazi with pistol", false, 30, 5, pistol3, "");
+    AI guard = new AI("guard", "Nazi guarding the base", false, 50, 5, pistol4, "");
+    AI naziwithcoin = new AI("nazi", "Nazi soldier", false, 30, 10, shinycoin, "");
+    AI prisoner = new AI("prisoner", "prisoner", true, 100, 100, void, "There was an American camp to the north along the road. But I heard the Nazi's were snding a patrol there to check it out. You should get there asap. Also you might wanna check the camp.");
+    AI baker = new AI("baker", "a sad baker", true, 100, 100, void, "There is no food here but there is a hunting ground to the North in the forest. Watch out for Nazi's.")
+    
+    Items ladder = new Items("ladder", "tall ladder", void, true);
+    Items box = new Items("box", "a box", void, false);
+    Items fire = new Items("fire", "fire for cooking", void, false);
+    Items fire2 = new Items("box", "fire for cooking", void, false);
+    Items oak = new Items("oak", "oak tree", void, false);
+    Items tree = new Items("tree", "tree with parachute", void, false);
+    Items parachute = new Items("parachute", "a parachute", void, false);
+    Items coin = new Items("coin", "shiny coin", void, true);
+    Items knife = new Items("knife", "a sharp knife", void, true);
+    Items rawvenison = new Items("rawvenison", "raw meat", void, true);
+    Items rawvenison2 = new Items("rawvenison", "raw meat", void, true);
+    
+    Food venison = new Food("venison", "yummy meat", 10);
+    Food venison2 = new Food("venison", "yummy meat", 10);
+    Food mre = new Food("meals ready to eat", "soo filling", 20);
+    
+    Weapons machinegun = new Weapons("mg", "deadly weapon", 15);
+    Weapons chainsaw = new Weapons("chainsaw", "deadly weapon", 30)
+    Weapons rpg = new Weapons("rpg", "deadly weapon", 50)
+    Weapons sniper = new Weapons("sniper", "deadly weapon", 20)
+    Weapons rifle = new Weapons("rifle", "deadly weapon", 15)
+    Weapons smg = new Weapons("smg", "deadly weapon", 10)
+    Weapons pistol = new Weapons("pistol", "deadly weapon", 5)
+    Weapons pistol2 = new Weapons("pistol", "deadly weapon", 5)
+    Weapons pistol3 = new Weapons("pistol", "deadly weapon", 5)
+    Weapons pistol4 = new Weapons("pistol", "deadly weapon", 5)
+    
+    BC.AddtoObj(ladder);
+    BF.AddtoObj(rpg);
+    BH.AddtoObj(box);
+    CF.AddtoObj(knife);
+    DH.AddtoObj(fire);
+    EE.AddtoObj(fire2);
+    EG.AddtoObj(oak);
+    EH.AddtoObj(tree);
+    EH.AddtoObj(parachute);
+    GC.AddtoObj(smg);
+    HC.AddtoObj(mre);
+    HH.AddtoObj(pistol);
+    
+    BC.AddtoEnt(ncb);
+    BE.AddtoEnt(survivor);
+    BH.AddtoEnt(hermit);
+    CC.AddtoEnt(deer);
+    CD.AddtoEnt(patrol);
+    CH.AddtoEnt(sniper);
+    DH.AddtoEnt(ranger);
+    ED.AddtoEnt(nazi1);
+    EG.AddtoEnt(nazi2);
+    FG.AddtoEnt(deer2);
+    GD.AddtoEnt(guard);
+    GF.AddtoEnt(naziwithcoin);
+    GH.AddtoEnt(nazi3);
+    HD.AddtoEnt(prisoner);
+    HF.AddtoEnt(baker);
   }
 
   public static void Intro() { //Intro Screen; Gives user choice of playing or seeing help menu
@@ -278,7 +332,7 @@ public class GamePlay {
         eat();
       }
       else if (response.equals("use")) {
-        
+        use();
       }
       else if (response.equals("talk")) {
         talk();
@@ -448,7 +502,7 @@ public class GamePlay {
             System.out.println(response + " is not a weapon in your inventory.");
           }
     }
-    System.out.println(response + "is now equipped. Choose enemy to attack:");
+    System.out.println(response + " is now equipped. Choose enemy to attack:");
     response = Keyboard.readString();
     for (AI e: map[DT.getXcoor()][DT.getYcoor()].getEntArr()) {
       if (!e.getName().equals(response) || !e.isFriend) {
