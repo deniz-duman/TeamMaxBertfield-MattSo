@@ -6,13 +6,16 @@ public class Items implements Objects{
   private String _type = "";
     private String _desc = "";
     private ArrayList<Objects> Compatible = new ArrayList<Objects>();
-    private boolean take?;
-    public Items(String type, String desc, Items I, boolean take){
-        take? = take;
+    private boolean take;
+    public Items(String type, String desc, boolean take){
+        take = take;
         _type = type;
         _desc = desc;
+      }
+    public void addComp(Items I) {
       Compatible.add(I);  
   }
+
   public String getType() {
       return _type;
   }
@@ -21,12 +24,12 @@ public class Items implements Objects{
     _type = newType;
   }
   
-  public boolean getTake?() {
-    return take?;
+  public boolean getTake() {
+    return take;
   }
   
-  public void setTake?(boolean t) {
-    take? = t;
+  public void setTake(boolean t) {
+    take = t;
   }
   
     public String getDesc() {
