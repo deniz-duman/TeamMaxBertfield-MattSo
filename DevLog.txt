@@ -34,3 +34,4 @@ Devlog:
   
   ~1/24/16: Added use and corresponding methods, created instance variables, solved problems with "cannot find symbol" error. (SeaBassChin)
   
+  ~1/25/16: FINISHED DEBUGGING, TESTING, AND FINAL VERSION COMMITED. VICTORY! (SeaBassChin and DD)
