@@ -1,9 +1,9 @@
 //Driver Class
 import java.util.ArrayList;
-  public class GamePlay {
-    public static Location[][] map = new Location[9][9];
-    public static User DT = new User(); //makes user
-    public static Items nothing = new Items("nothing", "nothing", false);
+public class GamePlay {
+  public static Location[][] map = new Location[9][9];
+  public static User DT = new User(); //makes user
+public static Items nothing = new Items("nothing", "nothing", false);
     public static Items ladder = new Items("ladder", "tall ladder", true);
     public static Items box = new Items("box", "a box", false);
     public static Items fire = new Items("fire", "fire for cooking", false);
@@ -17,9 +17,26 @@ import java.util.ArrayList;
     public static Items rawvenison2 = new Items("rawvenison", "raw meat", true);
     public static Items cliff = new Items("Cliff", "Steep cliff; at the bottom is freedom", false);
     public static Items rope = new Items("Rope", "Cut from the parachute", true);
-    public static int searches = 5;
-    //public static InputStreamReader isr;
-    //public static BufferedReader in;
+    public static Items axe = new Items("Axe", "Good for chopping wood", true);
+
+    public static Weapons machinegun = new Weapons("mg", "deadly weapon", 15);
+    public static Weapons chainsaw = new Weapons("chainsaw", "deadly weapon", 30);
+    public static Weapons rpg = new Weapons("rpg", "deadly weapon", 50);
+    public static Weapons sniper = new Weapons("sniper", "deadly weapon", 20);
+    public static Weapons rifle = new Weapons("rifle", "deadly weapon", 15);
+    public static Weapons smg = new Weapons("smg", "deadly weapon", 10);
+    public static Weapons pistol = new Weapons("pistol", "deadly weapon", 5);
+    public static Weapons pistol2 = new Weapons("pistol", "deadly weapon", 5);
+    public static Weapons pistol3 = new Weapons("pistol", "deadly weapon", 5);
+    public static Weapons pistol4 = new Weapons("pistol", "deadly weapon", 5);
+
+
+    public static Food venison = new Food("venison", "yummy meat", 10);
+    public static Food venison2 = new Food("venison", "yummy meat", 10);
+    public static Food mre = new Food("meals ready to eat", "soo filling", 20);
+  public static int searches = 5;
+  //public static InputStreamReader isr;
+  //public static BufferedReader in;
   
   public static void Run() {
     CreateWorld();
@@ -218,8 +235,8 @@ import java.util.ArrayList;
     AI deer = new AI("deer", "deer is alone in the forest", false, 20, 0, rawvenison, "");
     AI deer2 = new AI("deer", "deer is alone in the forest", false, 20, 0, rawvenison2, "");
     AI patrol = new AI("patrol", "He has a machine gun", false, 50, 10, machinegun, "");
-    AI sniper = new AI("sniper", "Sniper dude", false, 40, 15, sniper, "");
-    AI ranger = new AI("Ranger", "Ally looking to help", true, 100, 100, nothing, "After you get food, you should go North, there is a hermit who knows these lands. Be careful though, there is a sniper.");
+    AI snipernazi = new AI("sniper", "Sniper dude", false, 40, 15, sniper, "");
+    AI ranger = new AI("ranger", "Ally looking to help", true, 100, 100, nothing, "You probably want to return to your squadron. Well you're going to have to wait till night. In the meanwhile get some food. There's a bakery in the town to the south. After you get food, you should go North, there is a hermit who knows these lands. Be careful though, there is a sniper.");
     AI nazi1 = new AI("nazi", "Nazi with rifle", false, 30, 10, rifle, "");
     AI nazi2 = new AI("nazi", "Nazi with pistol", false, 30, 5, pistol2, "");
     AI nazi3 = new AI("nazi", "Nazi with pistol", false, 30, 5, pistol3, "");
@@ -227,7 +244,7 @@ import java.util.ArrayList;
     AI naziwithcoin = new AI("nazi", "Nazi soldier", false, 30, 10, shinycoin, "");
     AI prisoner = new AI("prisoner", "prisoner", true, 100, 100, nothing, "There was an American camp to the north along the road. But I heard the Nazi's were snding a patrol there to check it out. You should get there asap. Also you might wanna check the camp.");
     AI baker = new AI("baker", "a sad baker", true, 100, 100, nothing, "There is no food here but there is a hunting ground to the North in the forest. Watch out for Nazi's.");
-    
+
 
     box.addComp(shinycoin);
     oak.addComp(axe);
@@ -236,21 +253,6 @@ import java.util.ArrayList;
     cliff.addComp(rope);
     rawvenison.addComp(fire);
 
-    
-    Food venison = new Food("venison", "yummy meat", 10);
-    Food venison2 = new Food("venison", "yummy meat", 10);
-    Food mre = new Food("meals ready to eat", "soo filling", 20);
-    
-    Weapons machinegun = new Weapons("mg", "deadly weapon", 15);
-    Weapons chainsaw = new Weapons("chainsaw", "deadly weapon", 30);
-    Weapons rpg = new Weapons("rpg", "deadly weapon", 50);
-    Weapons sniper = new Weapons("sniper", "deadly weapon", 20);
-    Weapons rifle = new Weapons("rifle", "deadly weapon", 15);
-    Weapons smg = new Weapons("smg", "deadly weapon", 10);
-    Weapons pistol = new Weapons("pistol", "deadly weapon", 5);
-    Weapons pistol2 = new Weapons("pistol", "deadly weapon", 5);
-    Weapons pistol3 = new Weapons("pistol", "deadly weapon", 5);
-    Weapons pistol4 = new Weapons("pistol", "deadly weapon", 5);
     
     BC.AddtoObj(ladder);
     BF.AddtoObj(rpg);
@@ -264,13 +266,14 @@ import java.util.ArrayList;
     GC.AddtoObj(smg);
     HC.AddtoObj(mre);
     HH.AddtoObj(pistol);
+    CH.AddtoObj(axe);
     
     BC.AddtoEnt(ncb);
     BE.AddtoEnt(survivor);
     BH.AddtoEnt(hermit);
     CC.AddtoEnt(deer);
     CD.AddtoEnt(patrol);
-    CH.AddtoEnt(sniper);
+    CH.AddtoEnt(snipernazi);
     DH.AddtoEnt(ranger);
     ED.AddtoEnt(nazi1);
     EG.AddtoEnt(nazi2);
@@ -643,8 +646,9 @@ import java.util.ArrayList;
   
   public static String mapper(){
     String retstr = "";
-    for (Location l: map) {
-      retstr += l.getName() + "\t";
+    for (Location[] m: map) {
+    for (Location l: m) {
+            retstr += l.getName() + "\t";}
     }
     return retstr;
   }
