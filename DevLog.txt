@@ -30,7 +30,7 @@ Devlog:
   
   ~1/23/16: Fixed trouble with interfaces, added the drop, pick up, and inventory commands, added constructors and methods to             food, user, and weapons. (SeaBassChin)
   
-  ~1/24/16: Added eat and talk to GamePlay. Updated food, user, and AI. (DD)
+  ~1/24/16: Added eat and talk to GamePlay. Updated food, user, and AI, built the map, and created instance variables. (DD)
   
-  ~1/24/16: Added use and corresponding methods, created instance variables.
+  ~1/24/16: Added use and corresponding methods, created instance variables, solved problems with "cannot find symbol" error. (SeaBassChin)
   
