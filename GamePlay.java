@@ -74,7 +74,7 @@ public static Items nothing = new Items("nothing", "nothing", false);
     Location CE = new Location ("Road",  "There is a road heading north from here. ",true, false);
     Location CF = new Location ("Abandoned House",  "This houe has been empty for pretty long. I could probably find a knife here.",true, false);
     Location CG = new Location ("Lake",  "Such a beautiful lake...probably filled with snakes, go somewhere else.",false, false);
-    Location CH = new Location ("Forest",  "this forest is very dark, you see a rustling in the trees...probably a sniper.", true, false);
+    Location CH = new Location ("Forest",  "This forest is very dark, you see a rustling in the trees...probably a sniper.", true, false);
     Location CI = new Location ("Landmine",  "You probably shouldn't go that way unless you want to blow up.", false, false);
     //Row 
     Location DA = new Location ("Sea", "You try to go that way but the waves halt your advance, don't try to swim.", false, false);
@@ -567,18 +567,18 @@ public static Items nothing = new Items("nothing", "nothing", false);
   System.out.println("Choose a cardinal direction:");
   String response = Keyboard.readString();
     if (response.equals("north")) {
-      if (map[DT.getXcoor()][DT.getYcoor()+1].getPass()) {
-        DT.setYcoor(DT.getYcoor()+1);
-        DT.setHun(-1);
-      }
-      else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
-    }
-    else if (response.equals("south")) {
       if (map[DT.getXcoor()][DT.getYcoor()-1].getPass()) {
         DT.setYcoor(DT.getYcoor()-1);
         DT.setHun(-1);
       }
       else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
+    }
+    else if (response.equals("south")) {
+      if (map[DT.getXcoor()][DT.getYcoor()+1].getPass()) {
+        DT.setYcoor(DT.getYcoor()+1);
+        DT.setHun(-1);
+      }
+      else {System.out.println(map[DT.getXcoor()][DT.getYcoor()+1].getDesc());}
     } 
     
     else if (response.equals("east")) {
@@ -586,14 +586,14 @@ public static Items nothing = new Items("nothing", "nothing", false);
         DT.setXcoor(DT.getXcoor()+1);
         DT.setHun(-1);
       }
-      else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
+      else {System.out.println(map[DT.getXcoor()+1][DT.getYcoor()].getDesc());}
     }
     else if (response.equals("west")) {
       if (map[DT.getXcoor()-1][DT.getYcoor()].getPass()) {
         DT.setXcoor(DT.getXcoor()-1);
         DT.setHun(-1);
       }
-      else {System.out.println(map[DT.getXcoor()][DT.getYcoor()-1].getDesc());}
+      else {System.out.println(map[DT.getXcoor()-1][DT.getYcoor()].getDesc());}
     }
     else {
       System.out.println("That is not a cardinal direction.");
